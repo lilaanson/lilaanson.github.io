@@ -8,7 +8,7 @@
 - JS
 
 ## In-Class assignments
-- [ICA1](https://lilaanson.github.io/wa/wa1.html)
+- [ICA1](https://docs.google.com/document/d/1X75I2X-n4izE5Qkc5tsf6WZaA0EAHyvunFdyzZBSw5A/edit)
 - ICA2
 - ICA3
 - ICA4
