@@ -2,13 +2,13 @@
 
 
 
-##Projects##
-HTML
-CSS
-JS
+## Projects
+- HTML
+- CSS
+- JS
 
-##In-Class assignments##
-- ICA1
+## In-Class assignments
+- [ICA1](https://lilaanson.github.io/wa/wa1.html)
 - ICA2
 - ICA3
 - ICA4
@@ -24,8 +24,8 @@ JS
 - ICA14
 - ICA15
 
-##Weekly Assignments##
-- WA1
+## Weekly Assignments
+- [WA1](https://lilaanson.github.io/wa/wa1.html)
 - WA2
 - WA3
 - WA4
