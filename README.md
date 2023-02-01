@@ -11,6 +11,7 @@
 - [ICA1](https://docs.google.com/document/d/1X75I2X-n4izE5Qkc5tsf6WZaA0EAHyvunFdyzZBSw5A/edit)
 - [ICA2](https://docs.google.com/document/d/17UCrkuqZqBWOKPhXo05bguJxD4oBcoN5BPDlnqN-W2w/edit?usp=sharing)
 - [ICA3](https://lilaanson.github.io/ica/ica3a.html)
+- [ICA3b](https://lilaanson.github.io/ica/ica3b/html)
 - ICA4
 - ICA5
 - ICA6
