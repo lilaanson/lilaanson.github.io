@@ -9,14 +9,14 @@ body, html {
     min-width:100%;
 }
 
-#overlay1 img{
+#overlayBottom img{
     position: fixed;
     bottom: 50px;
     left: 50px;
     width: 400px;
 }
 
-#overlay2 img{
+#overlayTop img{
     position: fixed;
     top: 50px;
     right: 50px;
