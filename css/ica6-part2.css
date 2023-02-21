@@ -22,12 +22,16 @@ body{
 }
 #grid-parent{
     display:grid;
-    grid-template-columns: ??????;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 50px);
+    grid-gap: 30px;
+
 }
 #grid-parent h1{
     background-color: grey;
     padding:3vw 5vh;
     margin:5vw;
+    width:50px;
     
 }
 #no0{
