@@ -24,7 +24,7 @@ body{
     display:grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 50px);
-    grid-gap: 30px;
+    /* grid-gap: 30px; ?????? */
 
 }
 #grid-parent h1{
@@ -35,6 +35,7 @@ body{
     
 }
 #no0{
+    /*padding: 10px;*/
 }
 #no1{
 }
