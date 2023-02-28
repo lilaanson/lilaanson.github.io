@@ -1,6 +1,10 @@
 
 body{
     background-color: khaki;
+    /* animation-name: bg;
+    animation-duration:2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; */
 }
 #box1{
     width: 25vw;
@@ -53,3 +57,16 @@ body{
     }
 
 }
+/* @keyframes bg{
+    0%{background-color:black;}
+    10%{background-color:darkmagenta;}
+    20%{background-color:darkgreen;}
+    30%{background-color:darkred;}
+    40%{background-color:darkblue;}
+    50%{background-color:darkorchid;}
+    60%{background-color:darkgoldenrod;}
+    70%{background-color:lightcoral;}
+    80%{background-color:royalblue;}
+    90%{background-color:orangered;}
+    100%{background-color:lightseagreen;}
+}*/
