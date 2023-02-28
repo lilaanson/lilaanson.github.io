@@ -1,0 +1,58 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    color:lightskyblue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    animation-name:runningTitle;
+    animation-duration:.5s;
+    animation-iteration-count: 1;
+    position:relative;
+}
+
+nav{
+    height: 50vh;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height:20px;
+    background-color: lavender;
+}
+nav a{
+    width:10vw;
+    text-align: center;
+    text-decoration: none;
+    color:black;
+}
+nav a:hover {
+    font-size:2em;
+    position:relative;
+}
+
+
+img{
+    width:30vw;
+    height: 30vh;
+}
+img:hover {
+    filter:invert(2);
+}
+
+#red-ball{
+    background-color: pink;
+    width: 20px;
+    height:20px;
+    border-radius: 50%;
+    position: absolute;
+    left:5vw;
+    top:0;
+}
+
+@keyframes runningTitle {
+    0%{rotate:20deg;}
+    25%{rotate:-40deg;}
+    50%{rotate: 40deg;}
+    75%{rotate:-40deg;}
+    100%{rotate:40deg;}
+}
