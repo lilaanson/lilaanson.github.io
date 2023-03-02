@@ -1,0 +1,152 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: hotpink;
+    color:black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#yellowBox {
+    width: 600px;
+    height: 250px;
+    top:190px;
+    right:350px;
+    border: 3px solid black;
+    background-color:greenyellow;
+    padding: 50px;
+    margin: 20px;
+    position:absolute;
+}
+#blueBox {
+    width: 600px;
+    height: 250px;
+    top:160px;
+    right:380px;
+    border: 3px solid black;
+    background-color:lightskyblue;
+    padding: 50px;
+    margin: 20px;
+    position:absolute;
+}
+#purpleBox {
+    width: 600px;
+    height: 250px;
+    top:130px;
+    right:410px;
+    border: 3px solid black;
+    background-color:purple;
+    padding: 50px;
+    margin: 20px;
+    position:absolute;
+}
+#whiteBox {
+    width: 600px;
+    height: 190px;
+    top: 160px;
+    right:440px;
+    border: 3px solid black;
+    background-color:white;
+    padding: 50px;
+    margin: 20px;
+    position:absolute;
+}
+#whiteBoxTop {
+    width: 700px;
+    height: 60px;
+    top: 100px;
+    right:440px;
+    border: 3px solid black;
+    background-color:greenyellow;
+    padding: 0px;
+    margin: 20px;
+    position:absolute;
+}
+#leftCircle{
+    border: 3px solid black;
+    background-color: white;
+    width: 25px;
+    height:25px;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    right: 110px;
+}
+#middleCircle{
+    border: 3px solid black;
+    background-color: white;
+    width: 25px;
+    height:25px;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    right: 70px;
+}
+#rightCircle{
+    border: 3px solid black;
+    background-color: white;
+    width: 25px;
+    height:25px;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    right: 30px;
+}
+#folder1{
+    position: absolute;
+    width:100px;
+    top:20px;
+    left:65px;
+}
+#folder2{
+    position: absolute;
+    width:100px;
+    top:170px;
+    right:290px;
+}
+#image{
+    position: absolute;
+    width:100px;
+    top:25px;
+    right:80px;
+}
+#delete{
+    position: absolute;
+    width:80px;
+    top:150px;
+    left:60px;
+}
+#file{
+    position: absolute;
+    width:80px;
+    top:15px;
+    right: 310px;
+}
+#delete:hover{
+    width:90px;
+    left:55px;
+    top:145px;
+}
+#search{
+    position: absolute;
+    width:100px;
+    top:155px;
+    right:70px;
+}
+#search:hover{
+    width:110px;
+    top: 150px;
+    right:65px;
+}
+#bubble {
+    position:absolute;
+    width: 100px;
+    right:200px;
+    top: 150px;
+}
+#bubble:hover{
+    width:200px;
+    right:160px;
+    top: 100px;
+}
+
