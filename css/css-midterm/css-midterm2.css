@@ -45,26 +45,57 @@ body{
 #error1{
     position:absolute;
     width:300px;
-    top: 350px;
-    left:80px;
+    top: 220px;
+    left:70px;
 }
 #error2{
     position:absolute;
     width:300px;
-    top: 200px;
+    top: 70px;
     left:200px;
 }
 #here{
     position:absolute;
     width:100px;
-    top:338px;
+    top:208px;
     left:240px;
 }
 #here2{
     position:absolute;
     width:100px;
-    top:487px;
-    left:120px;
+    top:357px;
+    left:110px;
 }
-
+#timer {
+    animation-name:timerFloat;
+    position:absolute;
+    width:170px;
+    right:365px;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes timerFloat{
+    0% {top:500px; opacity:0%;}
+    20% {opacity:0%;}
+    60% {opacity:100%}
+    80% {top: 300px;opacity:100%;}
+    100% {top:300px;}
+}
+#computer{
+    width:180px;
+    position:absolute;
+    left:350px;
+    animation-name:compFloat;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes compFloat{
+    0% {top:650px; opacity:0%;}
+    20% {opacity:0%;}
+    60% {opacity:100%}
+    80% {top: 450px;opacity:100%;}
+    100% {top:450px;} 
+}
 
