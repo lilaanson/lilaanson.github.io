@@ -4,7 +4,25 @@ body{
     align-items: center;
     background-color: hotpink;
     color:black;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#titleBack {
+    position:absolute;
+    color:greenyellow;
+    font-size: 70px;
+    right:660px;
+    top:17px;
+    padding:0px;
+    margin:0px;
+}
+#titleFront {
+    position: absolute;
+    color:lightskyblue;
+    font-size: 70px;
+    right: 656px;
+    top: 21px;
+    padding:0px;
+    margin:0px;
 }
 
 #yellowBox {
@@ -138,15 +156,23 @@ body{
     top: 150px;
     right:65px;
 }
-#bubble {
+#cube {
     position:absolute;
-    width: 100px;
-    right:200px;
-    top: 150px;
+    width: 150px;
+    right:290px;
+    top: 190px;
+    z-index: 1000; /*found this method on stack overflow https://stackoverflow.com/questions/15782078/bring-element-to-front-using-css */
 }
-#bubble:hover{
+#cube:hover{
     width:200px;
     right:160px;
     top: 100px;
+}
+#v {
+    position:absolute;
+    width:150px;
+    left:250px;
+    top:300px;
+    z-index:999;
 }
 
