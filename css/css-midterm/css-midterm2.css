@@ -54,9 +54,17 @@ body{
     top: 200px;
     left:200px;
 }
-#ok{
+#here{
     position:absolute;
     width:100px;
     top:338px;
     left:240px;
 }
+#here2{
+    position:absolute;
+    width:100px;
+    top:487px;
+    left:120px;
+}
+
+
