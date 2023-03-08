@@ -98,10 +98,12 @@ body{
     80% {top: 450px;opacity:100%;}
     100% {top:450px;} 
 }
-#error3{
+#aboutMe{
     position:absolute;
     width:300px;
-    right:300px;
-    top:300px;
+    right:120px;
+    top:170px;
+    z-index:999;
 }
+
 
