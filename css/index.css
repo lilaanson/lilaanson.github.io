@@ -8,9 +8,19 @@ body{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 #background {
+    width:100%;
     height:100%;
     position: absolute;
     top:0px;
+}
+#static{
+    width:100%;
+    height:100%;
+    position: absolute;
+    top:0px;
+    opacity: 10%;
+    z-index:1000;
+    pointer-events:none; /* found on stack overflow https://stackoverflow.com/questions/3680429/click-through-div-to-underlying-elements */
 }
 #greyBox {
     position:absolute;
@@ -47,7 +57,7 @@ body{
     position:absolute;
     width:300px;
     top: 220px;
-    left:70px;
+    left:120px;
 }
 #error2{
     position:absolute;
@@ -65,7 +75,7 @@ body{
     position:absolute;
     width:100px;
     top:357px;
-    left:110px;
+    left:160px;
 }
 #timer {
     animation-name:timerFloat;
@@ -93,7 +103,7 @@ body{
     animation-direction: alternate;
 }
 @keyframes compFloat{
-    0% {top:650px; opacity:0%;}
+    0% {top:500px; opacity:0%;}
     20% {opacity:0%;}
     60% {opacity:100%}
     80% {top: 450px;opacity:100%;}
@@ -120,14 +130,18 @@ body{
     }
     #background {
         height:100%;
+        transform: rotate(90deg); /*https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate */
         position: absolute;
         top:0px;
+    }
+    #static {
+        display:none;
     }
     #greyBox {
         position:absolute;
         background-color:#e0e0e0;
-        width: 50px;
-        height: 500px;
+        width: 500px;
+        height: 1100px;
         border-radius: 10px;
         top: 50px;
         margin:auto;
@@ -143,39 +157,39 @@ body{
         color:#e0e0e0;
         margin:auto;
         position:absolute;
-        top:220px;
-        font-size:150px;
+        top:180px;
+        font-size:120px;
     
     }
     #name2{
         color:#e0e0e0;
         margin:auto;
         position:absolute;
-        top:350px;
-        font-size:150px;
+        top:285px;
+        font-size:120px;
     }
     #error1{
         position:absolute;
         width:300px;
-        top: 220px;
+        top: 920px;
         left:70px;
     }
     #error2{
         position:absolute;
         width:300px;
-        top: 70px;
+        top: 770px;
         left:200px;
     }
     #here{
         position:absolute;
         width:100px;
-        top:208px;
+        top:908px;
         left:240px;
     }
     #here2{
         position:absolute;
         width:100px;
-        top:357px;
+        top:1057px;
         left:110px;
     }
     #timer {
@@ -207,14 +221,14 @@ body{
         0% {top:650px; opacity:0%;}
         20% {opacity:0%;}
         60% {opacity:100%}
-        80% {top: 450px;opacity:100%;}
-        100% {top:450px;} 
+        80% {top: 350px;opacity:100%;}
+        100% {top:350px;} 
     }
     #aboutMe{
         position:absolute;
         width:300px;
-        right:120px;
-        top:170px;
+        margin:auto;
+        top:630px;
         z-index:999;
     }
     
