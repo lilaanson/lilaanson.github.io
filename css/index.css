@@ -87,11 +87,11 @@ body{
     animation-direction: alternate;
 }
 @keyframes timerFloat{
-    0% {top:400px; opacity:0%;}
+    0% {top:300px; opacity:0%;}
     20% {opacity:0%;}
     60% {opacity:100%}
-    80% {top: 300px;opacity:100%;}
-    100% {top:300px;}
+    80% {top: 200px;opacity:100%;}
+    100% {top:200px;}
 }
 #computer{
     width:180px;
@@ -103,11 +103,11 @@ body{
     animation-direction: alternate;
 }
 @keyframes compFloat{
-    0% {top:400px; opacity:0%;}
+    0% {top:300px; opacity:0%;}
     20% {opacity:0%;}
     60% {opacity:100%}
-    80% {top: 350px;opacity:100%;}
-    100% {top: 350px;} 
+    80% {top: 250px;opacity:100%;}
+    100% {top: 250px;} 
 }
 #aboutMe{
     position:absolute;
