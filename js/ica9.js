@@ -20,3 +20,9 @@ function createParagraph() {
 
   document.getElementById("box").onmouseover = function() {mouseOver()};
   document.getElementById("box").onmouseout = function() {mouseOut()};
+
+  document.getElementById("alert").addEventListener("click", myFunction);
+
+  function myFunction() {
+    alert ("who knew we could code these???");
+  }
