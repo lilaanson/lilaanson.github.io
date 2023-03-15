@@ -4,7 +4,7 @@
 
 ## Projects
 - [HTML](https://lilaanson.github.io/html-midterm/page1.html)
-- [CSS](lilaanson.github.io)
+- [CSS](https://lilaanson.github.io)
 - JS
 
 ## In-Class assignments
