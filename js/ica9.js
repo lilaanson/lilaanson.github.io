@@ -1,6 +1,6 @@
 function createParagraph() {
     const para = document.createElement("p");
-    para.textContent = "You clicked the button!";
+    para.textContent = "hi";
     document.body.appendChild(para);
   }
   
@@ -9,3 +9,17 @@ function createParagraph() {
   for (const button of buttons) {
     button.addEventListener("click", createParagraph);
   }
+
+
+
+  document.getElementById("box").onmouseover = function() {mouseOver()};
+  document.getElementById("box").onmouseout = function() {mouseOut()};
+  
+  function mouseOver() {
+    document.getElementById("box").style.backgroundColor = "lightBlue";
+  }
+  
+  function mouseOut() {
+    document.getElementById("box").style.backgroundColor = "pink";
+  }
+

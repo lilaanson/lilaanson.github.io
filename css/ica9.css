@@ -1,0 +1,12 @@
+div {
+    width: 100px;
+    height:100px;
+    background-size:40%;
+    background-color:pink;
+    margin:auto;
+}
+button{
+    width:500px;
+    height:100px;
+    font-size:50px;
+}
