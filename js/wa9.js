@@ -7,7 +7,7 @@ function randomValueFromArray(array){
     return array[random];
 }
 
-var storyText = "It was 9pm and 30 fahrenheit outside and they just wanted to :insertx:, but their frisbee had flown over the :inserty: and they needed to get it or Bob would be mad. It cost 20 dollars after all. Of course they made little Jason go get it. He was :insertz:."
+var storyText = "It was dark and 30 fahrenheit outside and they just wanted to :insertx:, but their frisbee had flown over the :inserty: and they needed to get it or Bob would be mad. It cost 20 dollars after all. Of course they made little Jason go get it. He was :insertz:."
 var insertX = ["go inside", "keep playing", "run away"];
 var insertY = ["fence", "shed", "neighbor's house"];
 var insertZ = ["scared out of his mind", "so annoyed", "always such a daredevil"];
