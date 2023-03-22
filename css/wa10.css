@@ -1,15 +1,14 @@
 body {
   width: 640px;
   margin: 0 auto;
-  top: 100px;
-  padding: 100px;
+  top: 50px;
+  padding: 50px;
   }
 .text1 {
   position: absolute;
   transform: rotate(-90deg);
   font-size: 100px;
-  top: 280px;
-  left: 430px;
+  left: 240px;
   animation-name: text1Move;
   animation-duration: 4s;
   animation-iteration-count:infinite;
@@ -20,8 +19,7 @@ body {
   position: absolute;
   transform: rotate(90deg);
   font-size: 100px;
-  top: 280px;
-  right: 360px;
+  right: 160px;
   animation-name: text2Move;
   animation-duration: 4s;
   animation-iteration-count:infinite;
@@ -63,11 +61,11 @@ button {
 }
 @keyframes text1Move{
   0% {
-    top:600px; 
+    top:450px; 
     opacity:0%;
   }
   50%{
-    top:220px;
+    top:160px;
     opacity: 100%;
   }
   100% {
@@ -83,12 +81,12 @@ button {
     opacity:0%;
   }
   50%{
-    top:280px;
+    top:220px;
     opacity: 100%;
   }
 
   100% {
-    top:550px;   
+    top:400px;   
     opacity:0%;
   }
 }
