@@ -14,7 +14,8 @@ body {
   animation-duration: 4s;
   animation-iteration-count:infinite;
   z-index: 999;
-  }
+  } 
+
 .text2 {
   position: absolute;
   transform: rotate(90deg);
@@ -74,6 +75,7 @@ button {
     opacity:0%;
   }
 }
+
 
 @keyframes text2Move{
   0% {
