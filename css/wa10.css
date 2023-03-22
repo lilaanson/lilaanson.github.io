@@ -19,7 +19,7 @@ body {
   position: absolute;
   transform: rotate(90deg);
   font-size: 100px;
-  right: 160px;
+  right: 175px;
   animation-name: text2Move;
   animation-duration: 4s;
   animation-iteration-count:infinite;
@@ -77,7 +77,7 @@ button {
 
 @keyframes text2Move{
   0% {
-    top:0px; 
+    top:10px; 
     opacity:0%;
   }
   50%{
