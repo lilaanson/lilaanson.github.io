@@ -1,46 +1,95 @@
-h1 {
-    font-family: helvetica, arial, sans-serif;
-    text-align: center;
+body {
+  width: 640px;
+  margin: 0 auto;
+  top: 100px;
+  padding: 100px;
   }
+.text1 {
+  position: absolute;
+  transform: rotate(-90deg);
+  font-size: 100px;
+  top: 280px;
+  left: 430px;
+  animation-name: text1Move;
+  animation-duration: 4s;
+  animation-iteration-count:infinite;
+  z-index: 999;
+  }
+.text2 {
+  position: absolute;
+  transform: rotate(90deg);
+  font-size: 100px;
+  top: 280px;
+  right: 360px;
+  animation-name: text2Move;
+  animation-duration: 4s;
+  animation-iteration-count:infinite;
+  z-index: 1000;
+}
+
+.displayed-img, .full-img {
+  position: relative;
+  display: block;
+  width: 640px;
+  height: 480px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 640px;
+  height: 480px;
+  background-color: rgba(0,0,0,0);
+}
+
+button {
+  border: 0;
+  background: rgba(150,150,150,0.6);
+  text-shadow: 1px 1px 1px white;
+  border: 1px solid #999;
+  position: absolute;
+  cursor: pointer;
+  top: 2px;
+  left: 2px;
+}
+
+.thumb-bar img {
+  display: block;
+  width: 20%;
+  float: left;
+  cursor: pointer;
+}
+@keyframes text1Move{
+  0% {
+    top:600px; 
+    opacity:0%;
+  }
+  50%{
+    top:220px;
+    opacity: 100%;
+  }
+  100% {
+    top:0px;   
+    opacity:0%;
+  }
+}
+
+@keyframes text2Move{
+  0% {
+    top:0px; 
+    opacity:0%;
+  }
+  50%{
+    top:280px;
+    opacity: 100%;
+  }
+
+  100% {
+    top:550px;   
+    opacity:0%;
+  }
+}
   
-  body {
-    width: 640px;
-    margin: 0 auto;
-  }
-  .image{
-    writing-mode: vertical-lr;
-    text-orientation: sideways;
-  }
-  .displayed-img, .full-img {
-    position: relative;
-    display: block;
-    width: 640px;
-    height: 480px;
-  }
   
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 640px;
-    height: 480px;
-    background-color: rgba(0,0,0,0);
-  }
-  
-  button {
-    border: 0;
-    background: rgba(150,150,150,0.6);
-    text-shadow: 1px 1px 1px white;
-    border: 1px solid #999;
-    position: absolute;
-    cursor: pointer;
-    top: 2px;
-    left: 2px;
-  }
-  
-  .thumb-bar img {
-    display: block;
-    width: 20%;
-    float: left;
-    cursor: pointer;
-  }
+
