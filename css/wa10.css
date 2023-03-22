@@ -7,10 +7,14 @@ h1 {
     width: 640px;
     margin: 0 auto;
   }
-  
-  .full-img {
+  .image{
+    writing-mode: vertical-lr;
+    text-orientation: sideways;
+  }
+  .displayed-img, .full-img {
     position: relative;
     display: block;
+    width: 640px;
     height: 480px;
   }
   
