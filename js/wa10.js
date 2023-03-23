@@ -5,7 +5,7 @@ const btn = document.querySelector('button');
 const overlay = document.querySelector('.overlay');
 
 /* Declaring the array of image filenames */
-var imgArray = ['mountain1.jpg', 'mountain2.jpg', 'mountain4.jpg', 'mountain3.jpg', 'mountain5.jpg'];
+var imgArray = ['mountain1.jpg', 'mountain2Copy.jpg', 'mountain4.jpg', 'mountain3.jpg', 'mountain5.jpg'];
 /* Declaring the alternative text for each image file */
 var altDict = {
     'mountain1.jpg': "a stream flowing through snowy mountains",
