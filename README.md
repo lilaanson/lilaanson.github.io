@@ -17,9 +17,9 @@
 - [ICA6](https://lilaanson.github.io/ica/ica6-part1.html)
 - [ICA7](https://lilaanson.github.io/ica/ica7.html)
 - ICA8
-- [ICA9](https://lilaanson.github.io/ica/ica9)
-- ICA10
-- ICA11
+- [ICA9](https://lilaanson.github.io/ica/ica9.html)
+- [ICA10](https://lilaanson.github.io/ica/ica10.html)
+- [ICA11](https://lilaanson.github.io/ica/ica11.html)
 - ICA12
 - ICA13
 - ICA14
@@ -35,8 +35,8 @@
 - [WA7](https://lilaanson.github.io/wa/wa7.html)
 - WA8
 - WA9
-- WA10
-- WA11
+- [WA10](https://lilaanson.github.io/wa/wa10.html)
+- [WA11](https://lilaanson.github.io/wa/wa11.html)
 - WA12
 - WA13
 - WA14
