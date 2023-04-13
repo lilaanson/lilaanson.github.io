@@ -14,5 +14,5 @@ function createTitle() {
 }
 
 function startGame() {
-    // best method to use for key movements?
+    // best method to use for key movements? if statements
 }
