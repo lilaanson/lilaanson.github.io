@@ -1,0 +1,13 @@
+.flex-container{
+    display:flex;
+    flex-direction:column;
+}
+
+#left{
+    flex:1 200px;
+    position:fixed;
+}
+
+#right{
+    flex:2 200px;
+}
