@@ -10,6 +10,42 @@
     <script defer src="/js/wa13.js"></script>
 </head>
 <body>
-
+    <!-- <div>
+        <p>Select Volume</p>
+        <p class="output">50</p>
+    </div>
+    <div>
+        <form>
+            <input class="minus-button" type="button" name="minus-button" value="MINUS">
+            <input class="plus-button" type="button" name="plus-button" value="PLUS">
+            <input class="reset-button" type="button" name="reset-button" value="RESET">
+            <input class="random-button" type="button" name="random-button" value="RANDOM">
+            <input class="submit-button" type="button" name="submit-button" value="SUBMIT">
+        </form>
+    </div> -->
+    <div id="changer">
+        <div class="slidecontainer">
+            <p id="current-volume"></p>
+            <input type="range" min="0" max="100" value="0" class="slider" id="myRange" oninput="updateVolume(this.value);" onchange="game(this.value);">
+            <!-- <input class="slider-submit-button" type="button" name="slider-submit-button" value="SUBMIT"> -->
+            <p class="slider-output">50</p>
+        </div>
+    </div>
+    <div id="pop-up-screen">
+        <p id="results"></p>
+        <div id="buttons">
+            <p id="your-selection">Your selection:</p>
+            <p id="your-selection-answer"></p>
+            <div id="buttons-to-disappear">
+                <button id="rock">ROCK</button>
+                <button id="paper">PAPER</button>
+                <button id="scissors">SCISSORS</button>
+            </div>
+            <br>
+            <p id="computer-selection">Computer selection:</p>
+            <img id="loading" src="/img/loading.gif">
+            <p id="computer-selection-answer"></p>
+        </div>
+    </div>
 </body>
 </html>
