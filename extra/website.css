@@ -1,52 +1,214 @@
 body {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:"Source Sans Pro";
+    min-height: 100%;
+    height: 100%;
 }
 p {
     margin:0;
 }
-#left{
-    box-sizing: border-box;
-    position:fixed;
-    width: 27%;
-    margin-left: 0;
-    padding:20px;
-    top: 40%;
-    height: 100%;
-}
-
-#right{
-    box-sizing: border-box;
-    width: 65%;
-    padding: 20px 20px 20px 50px;
-    height:100%;
+.content{
+    position:absolute;
     display:grid;
-    grid-template-columns: 50% 50%;
-    flex-direction: column;
-    float:right;
+    grid-auto-columns: 60% 320px 350px;
+    column-gap: 10%;
+    row-gap: 0px;
+}
+#left{
+    padding: 0 0 0 20px;
+    top: 40%;
+    grid-column: 1;
+    grid-row: 3;
+    position:fixed;
+}
+#description1{
+    position:relative;
+    grid-column:2;
+    grid-row:1;
+    padding: 90px 0px 0px 30px;
+    font-size:13px;
+
+}
+#image1{
+    position:relative;
+    grid-column: 3;
+    grid-row: 1;
+}
+#description2{
+    position:relative;
+    grid-column:2;
+    grid-row:2;
+    padding: 90px 0px 0px 30px;
+    font-size:13px;
+}
+#image2{
+    position:relative;
+    grid-column: 3;
+    grid-row: 2;
+}
+#description3{
+    position:relative;
+    grid-column:2;
+    grid-row:3;
+    padding: 90px 0px 0px 30px;
+    font-size:13px;
+}
+#image3{
+    position:relative;
+    grid-column: 3;
+    grid-row: 3;
+}
+#description4{
+    position:relative;
+    grid-column: 2;
+    grid-row: 4;
+    padding: 20px 0px 0px 30px;
+    font-size:13px;
+}
+#image4{
+    position:relative;
+    grid-column:3;
+    grid-row:4;
 }
 #name {
     font-size: 61px;
+    font-family: "Quicksand";
 }
 #bio {
-    font-size: 12px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 13px;
 }
 a {
-    font-size: 12px;
-    color: black;
-
+    font-size: 14px;
+    color:black;
+    line-height: 70%;
+}
+a:hover{
+    color:#9c9e9e;
+}
+.noUnderline {
+    text-decoration: none;
+}
+#dropDowns{
+    visibility: hidden;
+    text-indent:18px;
+}
+ul {
+    list-style: none;
+}
+#fakeLink{
+    font-size:14px;
+    color:black;
 }
 #bluebird {
     width:500px;
-    padding: 0px 10px 50px 10px;
+    padding: 0px 0px 50px 0px;
     left: 0px;
 }
 #cs {
     width:550px;
-    padding: 50px 0px 10px 10px;
+    padding: 50px 0px 0px 00px;
 }
 
 #bookmania {
     width:600px;
-    padding: 50px 10px 10px 10px;
+    padding: 50px 00px 0px 00px;
+}
+#forEmma{
+    width:450px;
+    padding: 0px 0px 0px 100px;
+}
+.madeWith{
+    color: #9c9e9e;
+}
+#one{
+    grid-column: 2;
+    grid-row: 1;
+    padding: 0px 5px 5px 20px;
+}
+#two{
+    grid-column: 3;
+    grid-row: 1;
+    padding: 20px 5px 5px 120px;
+}
+#three{
+    grid-column: 2;
+    grid-row: 2;
+    padding: 5px 5px 5px 20px;
+}
+#four{
+    grid-column: 3;
+    grid-row: 2;
+    padding: 5px 5px 5px 120px;
+}
+#five{
+    grid-column: 2;
+    grid-row: 3;
+    padding: 5px 5px 5px 20px;
+}
+#six{
+    grid-column: 3;
+    grid-row: 3;
+    padding: 5px 5px 5px 120px;
+}
+#seven{
+    grid-column: 2;
+    grid-row: 4;
+    padding: 5px 5px 5px 20px;
+}
+#eight{
+    grid-column: 3;
+    grid-row: 4;
+    padding: 5px 5px 5px 120px;
+}
+#nine{
+    grid-column: 2;
+    grid-row: 5;
+    padding: 5px 5px 5px 20px;
+}
+#ten{
+    grid-column: 3;
+    grid-row: 5;
+    padding: 5px 5px 5px 120px;
+}
+#eleven{
+    grid-column: 2;
+    grid-row: 6;
+    padding: 5px 5px 5px 20px;
+}
+#twelve{
+    grid-column: 3;
+    grid-row: 6;
+    padding: 5px 5px 5px 120px;
+}
+#thirteen{
+    grid-column: 2;
+    grid-row: 7;
+    padding: 5px 5px 5px 20px;
+}
+#fourteen{
+    grid-column: 3;
+    grid-row: 7;
+    padding: 5px 5px 5px 120px;
+}
+#fifteen{
+    grid-column: 2;
+    grid-row: 8;
+    padding: 5px 5px 5px 20px;
+}
+#sixteen{
+    grid-column: 3;
+    grid-row: 8;
+    padding: 5px 5px 5px 120px;
+}
+#seventeen{
+    grid-column: 2;
+    grid-row: 9;
+    padding: 5px 5px 0px 20px;
+}
+
+.pic{
+    width: 470px;
+}
+
+#dropDown{
+    line-height:100%;
 }

@@ -166,14 +166,14 @@ function finalResults(computerChoice, yourChoice) {
             setTimeout(() => {  lose(); }, 2000);
         }
         else if (computerChoice === "scissors"){
-            results.textContent = `You win. Keeping volume`;
+            results.textContent = `You win. Setting desired volume`;
             console.log("Waiting 2 seconds then resetting");
             setTimeout(() => {  win(storedValue); }, 2000);
         }
     }
     else if(yourChoice === "scissors"){
         if(computerChoice === "paper"){
-            results.textContent = `You win. Keeping volume`;
+            results.textContent = `You win. Setting desired volume`;
             console.log("Waiting 2 seconds then resetting");
             setTimeout(() => {  win(storedValue); }, 2000);
         }
@@ -191,7 +191,7 @@ function finalResults(computerChoice, yourChoice) {
             setTimeout(() => {  lose(); }, 2000);
         }
         else if (computerChoice === "rock"){
-            results.textContent = `You win. Keeping volume`;
+            results.textContent = `You win. Setting desired volume`;
             console.log("Waiting 2 seconds then resetting");
             setTimeout(() => {  win(storedValue); }, 2000);
             
