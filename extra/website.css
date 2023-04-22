@@ -61,7 +61,7 @@ p {
     position:relative;
     grid-column: 2;
     grid-row: 4;
-    padding: 20px 0px 0px 30px;
+    padding: 10px 0px 0px 30px;
     font-size:13px;
 }
 #image4{
@@ -70,8 +70,8 @@ p {
     grid-row:4;
 }
 #name {
-    font-size: 61px;
-    font-family: "Quicksand";
+    font-size: 83px;
+    font-family: "Oswald";
 }
 #bio {
     font-size: 13px;
