@@ -1,0 +1,86 @@
+
+#centered{
+    position:absolute;
+    text-align: center;
+    align-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height:600px;
+    width: 600px;
+    background: linear-gradient(rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 50%);
+    padding:5px;
+}
+.location{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height:650px;
+}
+
+#buttonBegin{
+    position: absolute;
+    top: 50%;
+    left: 67%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255,255,255,.5);
+
+    color: black;
+    font-family: "Philosopher";
+}
+#largeTextTitle{
+    text-align: center;
+    font-size: 25px;
+    font-family: "Philosopher";
+    position:absolute;
+    top:0%;
+}
+
+#smallTextDescription{
+    font-size: 16px;
+    font-family: "Philosopher";
+    position:absolute;
+    top:10%;
+    padding:5px;
+}
+#diceRolls{
+    font-size: 16px;
+    font-family: "Philosopher";
+    position:absolute;
+    top:30%;
+    width:600px;
+}
+  
+  /* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+#buttonHolder{
+    height:50px;
+    top: 40%;
+    position:absolute;
+    align-content: center;
+    margin: auto;
+    width:600px;
+    font-family: "Philosopher";
+}
+
+button{
+    border: none;
+    color: white;
+    width:100px;
+    height:50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    background-color: rgba(19, 67, 17, 1);
+    font-family: "Philosopher";
+}
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }

@@ -142,7 +142,6 @@ function scissors() {
         const computerChoice = computerChoices[randomIndex];
         reveal(computerChoice, "scissors");
     }
-
 }
 function reveal(computerChoice, yourChoice) {
     //console.log(computerChoice);
