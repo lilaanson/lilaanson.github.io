@@ -20,6 +20,20 @@ p {
     grid-row: 3;
     position:fixed;
 }
+#contactInfo{
+    margin:auto;
+    top:270px;
+    padding: 25px 500px 50px 700px;
+    position: absolute;
+    width: 470px;
+}
+#forInq{
+    font-size:14px;
+}
+#actualContact{
+    font-family: "Source Sans Pro";
+    font-size: 17px;
+}
 #description1{
     position:relative;
     grid-column:2;
