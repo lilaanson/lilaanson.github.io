@@ -1,0 +1,334 @@
+body {
+    font-family:"Source Sans Pro";
+    min-height: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+p {
+    margin:0;
+}
+.content{
+    position:absolute;
+    display:grid;
+    grid-auto-columns: 21% 25% 20%;
+    column-gap: 5%;
+    row-gap: 0px;
+    height:100%;
+    width:100%;
+}
+#left{
+    padding: 0 0 0 20px;
+    top: 40%;
+    position:fixed;
+    width: 350px;
+}
+#contactInfo{
+    margin:auto;
+    top:270px;
+    padding: 25px 500px 50px 700px;
+    position: absolute;
+    width: 470px;
+}
+#forInq{
+    font-size:14px;
+}
+#actualContact{
+    font-family: "Source Sans Pro";
+    font-size: 17px;
+}
+#description1{
+    position:relative;
+    grid-column:2;
+    grid-row:1;
+    padding: 90px 0px 0px 30px;
+    font-size:13px;
+
+}
+#image1{
+    position:relative;
+    grid-column: 3;
+    grid-row: 1;
+}
+#description2{
+    position:relative;
+    grid-column:2;
+    grid-row:2;
+    padding: 90px 0px 0px 30px;
+    font-size:13px;
+}
+#image2{
+    position:relative;
+    grid-column: 3;
+    grid-row: 2;
+}
+#description3{
+    position:relative;
+    grid-column:2;
+    grid-row:3;
+    padding: 90px 0px 0px 30px;
+    font-size:13px;
+}
+#image3{
+    position:relative;
+    grid-column: 3;
+    grid-row: 3;
+}
+#description4{
+    position:relative;
+    grid-column: 2;
+    grid-row: 4;
+    padding: 10px 0px 0px 30px;
+    font-size:13px;
+}
+#image4{
+    position:relative;
+    grid-column:3;
+    grid-row:4;
+}
+/* #name {
+    font-size: 83px;
+    font-family: "Oswald";
+    font-family: "Press Start 2P";
+    font-size: 34.5px;} */
+#name {
+    line-height: 98%;
+    font-size: 83px;
+    font-family: "Oswald";
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .05em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: 0em; /* Adjust as needed */
+    animation: 
+      typing 3.0s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  /* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+  
+  /* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+}
+
+#bio {
+    font-size: 13px;
+    width: 380px;
+}
+a {
+    font-size: 14px;
+    color:black;
+    line-height: 70%;
+}
+a:hover{
+    color:#9c9e9e;
+}
+.noUnderline {
+    text-decoration: none;
+}
+#dropDowns{
+    visibility: hidden;
+}
+ul {
+    list-style: none;
+}
+#fakeLink{
+    font-size:14px;
+    color:black;
+}
+#bluebird {
+    width:500px;
+    padding: 0px 0px 50px 0px;
+    left: 0px;
+}
+#cs {
+    width:550px;
+    padding: 50px 0px 0px 00px;
+}
+
+#bookmania {
+    width:600px;
+    padding: 50px 00px 0px 00px;
+}
+#forEmma{
+    width:450px;
+    padding: 0px 0px 0px 100px;
+}
+.madeWith{
+    color: #9c9e9e;
+}
+#one{
+    grid-column: 2;
+    grid-row: 1;
+    padding: 0px 5px 5px 20px;
+}
+#two{
+    grid-column: 3;
+    grid-row: 1;
+    padding: 20px 5px 5px 120px;
+}
+#three{
+    grid-column: 2;
+    grid-row: 2;
+    padding: 5px 5px 5px 20px;
+}
+#four{
+    grid-column: 3;
+    grid-row: 2;
+    padding: 5px 5px 5px 120px;
+}
+#five{
+    grid-column: 2;
+    grid-row: 3;
+    padding: 5px 5px 5px 20px;
+}
+#six{
+    grid-column: 3;
+    grid-row: 3;
+    padding: 5px 5px 5px 120px;
+}
+#seven{
+    grid-column: 2;
+    grid-row: 4;
+    padding: 5px 5px 5px 20px;
+}
+#eight{
+    grid-column: 3;
+    grid-row: 4;
+    padding: 5px 5px 5px 120px;
+}
+#nine{
+    grid-column: 2;
+    grid-row: 5;
+    padding: 5px 5px 5px 20px;
+}
+#ten{
+    grid-column: 3;
+    grid-row: 5;
+    padding: 5px 5px 5px 120px;
+}
+#eleven{
+    grid-column: 2;
+    grid-row: 6;
+    padding: 5px 5px 5px 20px;
+}
+#twelve{
+    grid-column: 3;
+    grid-row: 6;
+    padding: 5px 5px 5px 120px;
+}
+#thirteen{
+    grid-column: 2;
+    grid-row: 7;
+    padding: 5px 5px 5px 20px;
+}
+#fourteen{
+    grid-column: 3;
+    grid-row: 7;
+    padding: 5px 5px 5px 120px;
+}
+#fifteen{
+    grid-column: 2;
+    grid-row: 8;
+    padding: 5px 5px 5px 20px;
+}
+#sixteen{
+    grid-column: 3;
+    grid-row: 8;
+    padding: 5px 5px 5px 120px;
+}
+#seventeen{
+    grid-column: 2;
+    grid-row: 9;
+    padding: 5px 5px 0px 20px;
+}
+
+.pic{
+    width: 470px;
+}
+
+#dropDown{
+    line-height:100%;
+}
+
+#dropDown:hover{
+    cursor:pointer;
+}
+
+@media only screen and (max-width: 1344px) {
+    #name {
+        font-size: 70px;
+        font-family: "Oswald";
+        overflow: hidden; /* Ensures the content is not revealed until the animation */
+        border-right: .05em solid orange; /* The typwriter cursor */
+        white-space: nowrap; /* Keeps the content on a single line */
+        margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+        letter-spacing: 0em; /* Adjust as needed */
+        animation: 
+          typing 3.0s steps(40, end),
+          blink-caret .75s step-end infinite;
+      }
+      
+      /* The typing effect */
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+    }
+      
+      /* The typewriter cursor effect */
+    @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: orange; }
+    }
+    
+    #bio {
+        font-size: 13px;
+        width: 300px;
+    }
+    #left{
+        width: 300px;
+    }
+
+}
+
+
+@media only screen and (max-width: 1150px) {
+    #name {
+        font-size: 54px;
+        font-family: "Oswald";
+        overflow: hidden; /* Ensures the content is not revealed until the animation */
+        border-right: .05em solid orange; /* The typwriter cursor */
+        white-space: nowrap; /* Keeps the content on a single line */
+        margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+        letter-spacing: 0em; /* Adjust as needed */
+        animation: 
+          typing 3.0s steps(40, end),
+          blink-caret .75s step-end infinite;
+      }
+      
+      /* The typing effect */
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+    }
+      
+      /* The typewriter cursor effect */
+    @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: orange; }
+    }
+    
+    #bio {
+        font-size: 13px;
+        width: 230px;
+    }
+    #left{
+        width: 230px;
+    }
+
+}
