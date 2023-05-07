@@ -8,7 +8,8 @@
     transform: translate(-50%, -50%);
     height:600px;
     width: 600px;
-    background: linear-gradient(rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 50%);
+    /*background: linear-gradient(rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 50%);*/
+    background: transparent;
     padding:5px;
 }
 .location{
@@ -19,36 +20,55 @@
     height:650px;
 }
 
+.purchase{
+    height:650px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+
 #buttonBegin{
     position: absolute;
     top: 50%;
     left: 67%;
     transform: translate(-50%, -50%);
-    background-color: rgba(255,255,255,.5);
-
-    color: black;
-    font-family: "Philosopher";
+    background-color: transparent;
+    color:white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;    font-family: "Philosopher";
+}
+#buttonBegin:hover{
+    color: rgba(255, 255, 255, 0.764);
+    color:#000;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
 }
 #largeTextTitle{
     text-align: center;
-    font-size: 25px;
+    font-size: 16px;
     font-family: "Philosopher";
     position:absolute;
     top:0%;
+    color:white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;    font-family: "Philosopher";
 }
 
 #smallTextDescription{
+    color:white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     font-size: 16px;
     font-family: "Philosopher";
     position:absolute;
-    top:10%;
+    bottom:15%;
     padding:5px;
 }
 #diceRolls{
+    color:white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     font-size: 16px;
     font-family: "Philosopher";
     position:absolute;
-    top:30%;
+    bottom:10%;
     width:600px;
 }
   
@@ -60,7 +80,7 @@
 
 #buttonHolder{
     height:50px;
-    top: 40%;
+    bottom: 2%;
     position:absolute;
     align-content: center;
     margin: auto;
@@ -69,16 +89,24 @@
 }
 
 button{
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     border: none;
     color: white;
     width:100px;
-    height:50px;
+    height:2px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    padding: 60 60px 0 60px;
     background-color: rgba(19, 67, 17, 1);
     font-family: "Philosopher";
+    background: transparent;
+}
+button:hover{
+    color: rgba(255, 255, 255, 0.764);
+    color:#000;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
 }
 .disabled {
     opacity: 0.6;
