@@ -112,3 +112,9 @@ button:hover{
     opacity: 0.6;
     cursor: not-allowed;
   }
+
+#hidingHealth, #hidingMoney, #hidingEnemyHealth{
+    visibility: hidden;
+    width: 1px;
+    left: 0px;
+}
