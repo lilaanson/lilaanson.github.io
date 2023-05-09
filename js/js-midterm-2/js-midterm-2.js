@@ -644,13 +644,16 @@ function blockResult(enemyChoice,enemyChoiceBackup,playerChoice,pHealth,eHealth)
     blockHigh.style.display = "none";
     blockLow.style.display = "none";
     nextFightButton.style.display = "inline";
-    nextFightButton.addEventListener('click',function(){fight2(updatedHealth,eHealth)});
     nextFightButton.textContent = "Next";
     if(enemyChoice === playerChoice){
         description.textContent = `The enemy attacked ${enemyChoice}, and you successfully defended ${playerChoice}.`
+        nextFightButton.addEventListener('click',function(){fight2(pHealth,eHealth)});
+
     }
     else if (enemyChoice != playerChoice && (characterTraits.Body > 6) && enemyChoiceBackup === playerChoice){
         description.textContent = `The enemy attacked ${enemyChoice}, and you successfully defended ${playerChoice}.`
+        nextFightButton.addEventListener('click',function(){fight2(pHealth,eHealth)});
+
     }
     else{
         damage = Math.floor(Math.random() * 11) + 5;
@@ -659,6 +662,8 @@ function blockResult(enemyChoice,enemyChoiceBackup,playerChoice,pHealth,eHealth)
         updatedHealth = pHealth - newDamage;
         description.textContent = `The enemy attacked ${enemyChoice}, and you defended ${playerChoice}, taking ${newDamage} health. You have ${updatedHealth} health remaining.`
         title.textContent = `Health: ${updatedHealth} | ${money} drachmas`;
+        nextFightButton.addEventListener('click',function(){fight2(updatedHealth,eHealth)});
+
     }
 }
 
@@ -715,6 +720,7 @@ function usePotion(pHealth,eHealth){
 var attackScore;
 
 function useWeapon(pHealth,eHealth){
+    console.log("use weapon p health "+ pHealth);
     enemyChoiceIndex = Math.floor(Math.random() * 2);
     enemyChoice = fightOptions[enemyChoiceIndex];
     useWeaponButton.style.display = "none";
