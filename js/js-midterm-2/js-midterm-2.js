@@ -214,7 +214,10 @@ function rolling(){
     diceRollsTitle.textContent = "Rolling..."
     setTimeout(() => {  pickTraits3(); }, 2000); // change to longer
 }
-//const characterTraits = {};
+button1.addEventListener('click', mind);
+button2.addEventListener('click', body);
+button3.addEventListener('click', soul);
+const characterTraits = [];
 function displayButtons(){
     buttonHolder.style.display = "block";
     button1.style.display = "inline";
@@ -223,9 +226,7 @@ function displayButtons(){
     button1.textContent = "Mind";
     button2.textContent = "Body";
     button3.textContent = "Soul";
-    button1.addEventListener('click', mind);
-    button2.addEventListener('click', body);
-    button3.addEventListener('click', soul);
+
     pickTraits3();
 }
 function pickTraits3(){
@@ -234,6 +235,7 @@ function pickTraits3(){
         characterTraits.push(value);
         diceResult.style.display = "block";
         diceRollsTitle.textContent = `Select trait to assign roll to: ${value}`;
+        console.log(characterTraits);
     }
     else{
         pickTraits3();
@@ -264,14 +266,14 @@ function mind(){
 }
 function body(){
     button2.setAttribute("class","disabled");
-    if(characterTraits.traits === 1){
-        const value = characterTraits.traits[0];
+    if(characterTraits.length === 1){
+        const value = characterTraits[0];
         button2.textContent = `Body: ${value}`;
         characterTraits[0] = {"Body": value};
         rolling();
     }
     else if(characterTraits.length === 2){
-        const value = characterTraits.traits[1];
+        const value = characterTraits[1];
         button2.textContent = `Body: ${value}`;
         characterTraits[1] = {"Body": value};
         rolling();
@@ -305,7 +307,6 @@ function soul(){
     }
 }
 var money = 0
-hidingMoney.textContent = money;
 function pickMoney(){
     description.textContent = "You will now roll for your starting money, refered to as drachmas. The highest possible starting amount is 150, and the lowest is 75. Your drachmas will affect the quality and type of tools and weapons you can buy."
     rolls.style.display = "block";
@@ -325,13 +326,13 @@ function pickMoney2(){
     diceRollsTitle.textContent = money;
     button5.textContent = "Start";
     introPic.style.display = "none";
-
+    hidingMoney.textContent = money;
 }
-const whereToGo = "Choose where you would like to go. It is recommended that you prepare before heading outside of the gates.";
+const whereToGo = "Choose where you would like to go. It is recommended that you prepare before heading outside of the gates. ***THE TAVERN AND ARMORY ARE CURRENTLY CLOSED. YOU HAVE BEEN GIVEN A WEAPON. FOR THE SAKE OF TIME, GO TO THE POTION SHOP AND OUTSIDE.*****";
 
-hidingPlayerHealth.textContent = health;
 
 function actuallyBegin(){
+    money = hidingMoney.textContent;
     title.style.display = "block";
     title.textContent = `Health: ${health} | ${money} drachmas`;
     backFromShopButton.style.display = "none";
@@ -356,45 +357,52 @@ function actuallyBegin(){
     button6.textContent = "Potion Shop";
     button7.textContent = "Armory";
     button8.textContent = "Outside the gates"
-    button4.addEventListener('click', tavern);
-    button6.addEventListener('click', potionShop);
-    button7.addEventListener('click', armory);
+    button4.addEventListener('click', function(){tavern(money)});
+    button6.addEventListener('click', function(){potionShop(money)});
+    button7.addEventListener('click', function(){armory(money)});
     button8.addEventListener('click', outside);
 }
 
-const playerHealthLog = [];
-const enemyHealthLog = [];
+//const playerHealthLog = [];
+//const enemyHealthLog = [];
 var enemyHealth = 30;
-hidingEnemyHealth.textContent = enemyHealth;
+
 // hit impact out of 10, health out of 30?
 const possiblePurchases = {
     "Weapons": [ 
         {
         "Type":"Energy Field",
-        "Defensive Score":4,
-        "Attack Score":2
+        "DefensiveScore":4,
+        "AttackScore":2
         },
         {
         "Type":"Astral Rune",
-        "Defensive Score":2,
-        "Attack Score":4
+        "DefensiveScore":2,
+        "AttackScore":4
         }],
     "Potions": [
         {
         "Type":"Healing",
         "Use":"Self",
-        "Health Impact":10,
+        "HealthImpact":10,
         },
         {
         "Type":"Harming",
         "Use":"Enemy",
-        "Attack Score":10,
+        "AttackScore":10,
         }]
 };
-//const playerPurchases = {
-    //"Weapons": [],
-   // "Potions": []
-//};
+console.log(possiblePurchases);
+const playerPurchases = {
+    "Weapons": [
+        {
+        "Type":"Energy Field",
+        "DefensiveScore":4,
+        "AttackScore":2
+        }
+    ],
+    "Potions": []
+};
 
 backFromShopButton.addEventListener('click',actuallyBegin);
 var potionTally = 0
@@ -425,7 +433,7 @@ function potionShop(status){
         potionTally += 1;
     }
     else if(potionTally === 3){
-        potionPurchasing();
+        potionPurchasing(status);
         potionTally +=1;
     }
     else if(status === "done"){
@@ -454,11 +462,10 @@ function potionShop(status){
         backFromShopButton.textContent = "Back to Town Center";
     } 
     else if(beenToPotionShop === true && purchasedAtPotionShop === false){
-        console.log("should be here");
         potionPurchasing();
     }
 }
-function potionPurchasing(){
+function potionPurchasing(money){
     button4.style.display = "none";
     button6.style.display = "none";
     button7.style.display = "none";
@@ -477,28 +484,30 @@ function potionPurchasing(){
     blueButton.addEventListener('click', function(){potionChoice("harming")});
     backButton.addEventListener('click', potionShopBackToTown)
 }
+var updatedMoney;
 
 function potionChoice(type){
     console.log("assigning to array");
     if(type==="harming"){
-        playerPurchases.Potions.push(possiblePurchases.Potions[0][1])
+        playerPurchases.Potions.push(possiblePurchases.Potions[1])
         purchasedAtPotionShop = true;
         beenToPotionShop = true;
         doneAtPotionShop = true;
-        const newMoney = money - 30;
-        hidingMoney.textContent = newMoney;
-        title.textContent = `Health: ${health} | ${newMoney} drachmas`;
-        potionShop("done");
+        updatedMoney = hidingMoney.textContent - 30;
+        hidingMoney.textContent = updatedMoney;
+        title.textContent = `Health: ${health} | ${updatedMoney} drachmas`;
+        potionShop("done",updatedMoney);
     }
     else if(type==="healing"){
-        playerPurchases.Potions.push(possiblePurchases.Potions[0][0])
+        playerPurchases.Potions.push(possiblePurchases.Potions[0])
+        console.log(playerPurchases);
         purchasedAtPotionShop = true;
         beenToPotionShop = true;
         doneAtPotionShop = true;
-        const newMoney = money - 40;
-        hidingMoney.textContent = newMoney;
-        title.textContent = `Health: ${health} | ${newMoney} drachmas`;
-        potionShop("done");
+        updatedMoney = hidingMoney.textContent - 40;
+        hidingMoney.textContent = updatedMoney;
+        title.textContent = `Health: ${health} | ${updatedMoney} drachmas`;
+        potionShop("done",updatedMoney);
     }
     console.log(playerPurchases);
 }
@@ -510,6 +519,7 @@ function potionShopBackToTown(){
 function tavern(){
 
 }
+
 function armory(){
 
 }
@@ -644,10 +654,10 @@ function blockResult(enemyChoice,enemyChoiceBackup,playerChoice,pHealth,eHealth)
     }
     else{
         damage = Math.floor(Math.random() * 11) + 5;
-        defenseScore = playerPurchases.Weapons.DefensiveScore;
-        damage = damage - defenseScore;
-        updatedHealth = pHealth - damage;
-        description.textContent = `The enemy attacked ${enemyChoice}, and you defended ${playerChoice}, taking ${damage} health. You have ${updatedHealth} health remaining.`
+        defenseScore = playerPurchases.Weapons[0].DefensiveScore;
+        var newDamage = damage - defenseScore;
+        updatedHealth = pHealth - newDamage;
+        description.textContent = `The enemy attacked ${enemyChoice}, and you defended ${playerChoice}, taking ${newDamage} health. You have ${updatedHealth} health remaining.`
         title.textContent = `Health: ${updatedHealth} | ${money} drachmas`;
     }
 }
@@ -678,7 +688,7 @@ function usePotion(pHealth,eHealth){
     else if(isPotionUsed === false && purchasedAtPotionShop === true){
         isPotionUsed = true;
         usePotionButton.setAttribute("class","disabled");
-        if(playerPurchases.Potions.Type === "Healing"){
+        if(playerPurchases.Potions[0].Type === "Healing"){
             description.textContent = "You have increased your health by 10."
             updatedHealth = pHealth + 10;
             title.textContent = `Health: ${updatedHealth} | ${money} drachmas`;
@@ -688,9 +698,9 @@ function usePotion(pHealth,eHealth){
             backToEnemyAttackButton.textContent = "Next";
             backToEnemyAttackButton.addEventListener('click', function(){enemyAttackAgain(updatedHealth,eHealth)});
         }
-        else if(playerPurchases.Potions.Type === "Harming"){
+        else if(playerPurchases.Potions[0].Type === "Harming"){
             updatedEnemyHealth = eHealth - 10;
-            description.textContent = `You have decreased enemy health by 10. They have ${updatedEnemyHealth} remaining.`
+            description.textContent = `You have decreased enemy health by 10. They have ${updatedEnemyHealth} health remaining.`
             useWeaponButton.style.display = "none";
             usePotionButton.style.display = "none";
             backToEnemyAttackButton.style.display = "inline";
@@ -730,10 +740,10 @@ function attackingHighOrLow(enemyChoice, playerChoice,pHealth,eHealth){
     }
     else{
         damage = Math.floor(Math.random() * 10) - 1;
-        attackScore = playerPurchases.Weapons.AttackScore;
-        damage = damage + attackScore;
-        updatedEnemyHealth = eHealth - damage;
-        description.textContent = `You have attacked ${playerChoice}, and the enemy has defended ${enemyChoice}, taking ${damage} health. The enemy has ${updatedEnemyHealth} remaining.`
+        attackScore = playerPurchases.Weapons[0].AttackScore;
+        var newDamage = damage + attackScore;
+        updatedEnemyHealth = eHealth - newDamage;
+        description.textContent = `You have attacked ${playerChoice}, and the enemy has defended ${enemyChoice}, taking ${newDamage} health. The enemy has ${updatedEnemyHealth} health remaining.`
         backToEnemyAttackButton.addEventListener('click', function(){enemyAttackAgain(pHealth,updatedEnemyHealth)});
     }
 }
@@ -791,45 +801,10 @@ function enemyDeath (){
 ////////////
 ////////////////////
 
-const playerPurchases = {
-    "Weapons":
-        {
-        "Type":"Energy Field",
-        "DefensiveScore":4,
-        "AttackScore":2
-        },
-    "Potions": 
-        {
-        "Type":"Healing",
-        "Use":"Self",
-        "HealthImpact":10
-        }
-};
-const characterTraits = {"Mind": 10, "Body": 5, "Soul": 2}
 
 
-function cheatStart(){
-    introTally === 5
-    money = 85;
-    townCenter.style.display = "block";
-    description.style.display = "block";
-    actuallyBegin();
-    const playerPurchases = {
-        "Weapons": [
-            {"Type":"Energy Field"},
-            {"Defensive Score":4},
-            {"Attack Score":2}
-            
-        ],
-        "Potions": [
-            {
-            "Type":"Healing",
-            "Use":"Self",
-            "Health Impact":10,
-            }
-        ]
-    };
-}
 
-cheatStart();
+
+
+start();
 
