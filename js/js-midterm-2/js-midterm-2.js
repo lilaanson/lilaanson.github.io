@@ -23,6 +23,8 @@ const gatesOpen = document.getElementById("gatesOpen");
 const hidingPlayerHealth = document.getElementById("hidingHealth");
 const hidingMoney = document.getElementById("hidingMoney");
 const hidingEnemyHealth = document.getElementById("hidingEnemyHealth");
+const winScreen = document.getElementById("winScreen");
+const loseScreen = document.getElementById("loseScreen");
 
 //BUTTONS
 var button1 = document.createElement("Button");
@@ -140,6 +142,8 @@ useWeaponButton.style.display = "none";
 backToEnemyAttackButton.style.display = "none";
 attackHigh.style.display = "none";
 attackLow.style.display = "none";
+winScreen.style.display = "none";
+loseScreen.style.display = "none";
 
 
 button5.addEventListener('click', intro);
@@ -210,7 +214,7 @@ function rolling(){
     diceRollsTitle.textContent = "Rolling..."
     setTimeout(() => {  pickTraits3(); }, 2000); // change to longer
 }
-const characterTraits = {};
+//const characterTraits = {};
 function displayButtons(){
     buttonHolder.style.display = "block";
     button1.style.display = "inline";
@@ -325,7 +329,6 @@ function pickMoney2(){
 }
 const whereToGo = "Choose where you would like to go. It is recommended that you prepare before heading outside of the gates.";
 
-var health = 30;
 hidingPlayerHealth.textContent = health;
 
 function actuallyBegin(){
@@ -590,13 +593,14 @@ function outside2 (){
     outside();
 }
 
-var isPotionUsed = false;
-
-const fightOptions = ["Low","Middle","High"]
+var health = 30;
+const fightOptions = ["Low","High"]
 var enemyChoiceIndex;
 var enemyChoice;
+var playerHealth = 30;
 
 function fight(){
+    console.log(playerHealth);
     gatesOpen.style.display = "none";
     monster.style.display = "block";
     description.textContent = "Behind you, you see it. It is the size of a person, but its head and arms are unusually long. Its skin is caked with dirt. It runs at you."
@@ -604,54 +608,53 @@ function fight(){
     outsideNextButton.style.display = "none"
 
 
-    enemyChoiceIndex = Math.floor(Math.random() * 3);
+    enemyChoiceIndex = Math.floor(Math.random() * 2);
     enemyChoice = fightOptions[enemyChoiceIndex];
 
-    var enemyChoiceIndexBackup = Math.floor(Math.random() * 3);
+    var enemyChoiceIndexBackup = Math.floor(Math.random() * 2);
     var enemyChoiceBackup = fightOptions[enemyChoiceIndexBackup];
 
     blockHigh.style.display = "inline";
     blockHigh.textContent = "Block high";
-    blockHigh.addEventListener('click',function(){blockResult(enemyChoice,enemyChoiceBackup,"High")});
+    blockHigh.addEventListener('click',function(){blockResult(enemyChoice,enemyChoiceBackup,"High",20,20)});
+
     blockLow.style.display = "inline";
     blockLow.textContent = "Block low";
-    blockLow.addEventListener('click',function(){blockResult(enemyChoice,enemyChoiceBackup,"Low")});
+    blockLow.addEventListener('click',function(){blockResult(enemyChoice,enemyChoiceBackup,"Low",20,20)});
 }
 
-nextFightButton.addEventListener('click',fight2);
 var updatedHealth;
 var damage;
 var defenseScore;
+var updatedEnemyHealth;
 
-function blockResult(enemyChoice,enemyChoiceBackup,playerChoice){
+function blockResult(enemyChoice,enemyChoiceBackup,playerChoice,pHealth,eHealth){
+    console.log("player health"+ pHealth);
+    console.log("enemy health"+eHealth);
     blockHigh.style.display = "none";
     blockLow.style.display = "none";
     nextFightButton.style.display = "inline";
+    nextFightButton.addEventListener('click',function(){fight2(updatedHealth,eHealth)});
     nextFightButton.textContent = "Next";
     if(enemyChoice === playerChoice){
         description.textContent = `The enemy attacked ${enemyChoice}, and you successfully defended ${playerChoice}.`
     }
-    else if (enemyChoice != playerChoice && (characterTraits.body > 6) && enemyChoiceBackup === playerChoice){
+    else if (enemyChoice != playerChoice && (characterTraits.Body > 6) && enemyChoiceBackup === playerChoice){
         description.textContent = `The enemy attacked ${enemyChoice}, and you successfully defended ${playerChoice}.`
     }
     else{
-        damage = Math.floor(Math.random() * -10) - 1;
+        damage = Math.floor(Math.random() * 11) + 5;
         defenseScore = playerPurchases.Weapons.DefensiveScore;
         damage = damage - defenseScore;
-        playerHealthLog.push(damage);
-        for(let i = 0; i<playerHealthLog.length;i++){
-            updatedHealth += i;
-        }
-        hidingPlayerHealth.textContent = updatedHealth;
+        updatedHealth = pHealth - damage;
         description.textContent = `The enemy attacked ${enemyChoice}, and you defended ${playerChoice}, taking ${damage} health. You have ${updatedHealth} health remaining.`
         title.textContent = `Health: ${updatedHealth} | ${money} drachmas`;
     }
 }
-useWeaponButton.addEventListener('click', useWeapon);
-usePotionButton.addEventListener('click', usePotion);
 
-function fight2(){
-    if(hidingPlayerHealth.textContent <= 0){
+
+function fight2(pHealth,eHealth){
+    if(pHealth <= 0){
         playerDeath();
     }
     else{
@@ -661,91 +664,121 @@ function fight2(){
         useWeaponButton.textContent = "Use weapon";
         usePotionButton.style.display = "inline";
         usePotionButton.textContent = "Use potion"
+        useWeaponButton.addEventListener('click', function(){useWeapon(pHealth,eHealth)});
+        usePotionButton.addEventListener('click', function(){usePotion(pHealth,eHealth)});
     }
 }
-
-function usePotion(){
+var isPotionUsed = false;
+function usePotion(pHealth,eHealth){
+    console.log("in the potion use function");
     if(isPotionUsed === true){
         description.textContent = "You have already used your potion. Select another attack."
+
     }
-    else{
+    else if(isPotionUsed === false && purchasedAtPotionShop === true){
         isPotionUsed = true;
+        usePotionButton.setAttribute("class","disabled");
         if(playerPurchases.Potions.Type === "Healing"){
-            playerHealthLog.push(10);
             description.textContent = "You have increased your health by 10."
-            updatedHealth = 30;
-            for(let i = 0; i<playerHealthLog.length;i++){
-                updatedHealth += i;
-            }
-            hidingPlayerHealth.textContent = updatedHealth;
+            updatedHealth = pHealth + 10;
             title.textContent = `Health: ${updatedHealth} | ${money} drachmas`;
             useWeaponButton.style.display = "none";
             usePotionButton.style.display = "none";
             backToEnemyAttackButton.style.display = "inline";
             backToEnemyAttackButton.textContent = "Next";
-            backToEnemyAttackButton.addEventListener('click', enemyAttackAgain);
+            backToEnemyAttackButton.addEventListener('click', function(){enemyAttackAgain(updatedHealth,eHealth)});
         }
         else if(playerPurchases.Potions.Type === "Harming"){
-            enemyHealthLog.push(-10);
-            updatedHealth = 30;
-            for(let i = 0; i<enemyHealthLog.length;i++){
-                updatedHealth += i;
-            }
-            description.textContent = "You have decreased enemy health by 10."
-            hidingEnemyHealth.textContent = updatedHealth;
+            updatedEnemyHealth = eHealth - 10;
+            description.textContent = `You have decreased enemy health by 10. They have ${updatedEnemyHealth} remaining.`
             useWeaponButton.style.display = "none";
             usePotionButton.style.display = "none";
             backToEnemyAttackButton.style.display = "inline";
             backToEnemyAttackButton.textContent = "Next";
-            backToEnemyAttackButton.addEventListener('click', enemyAttackAgain);
+            backToEnemyAttackButton.addEventListener('click', function(){enemyAttackAgain(pHealth,updatedEnemyHealth)});
         }        
+    }
+    else if(isPotionUsed === false && purchasedAtPotionShop === false){
+        description.textContent = `You did not purchase a potion.`;
     }
 }
 var attackScore;
 
-function useWeapon(){
-    enemyChoiceIndex = Math.floor(Math.random() * 3);
+function useWeapon(pHealth,eHealth){
+    enemyChoiceIndex = Math.floor(Math.random() * 2);
     enemyChoice = fightOptions[enemyChoiceIndex];
     useWeaponButton.style.display = "none";
     usePotionButton.style.display = "none";
-    attackHigh.addEventListener('click', function(){attackingHighOrLow(enemyChoice,"High")});
-    attackLow.addEventListener('click',function(){attackingHighOrLow(enemyChoice,"Low")});
+    attackHigh.addEventListener('click', function(){attackingHighOrLow(enemyChoice,"High",pHealth,eHealth)});
+    attackLow.addEventListener('click',function(){attackingHighOrLow(enemyChoice,"Low",pHealth,eHealth)});
     attackHigh.style.display = "inline";
+    attackHigh.textContent = "Attack high";
+    attackLow.textContent = "Attack low";
     attackLow.style.display = "inline";
 }
 
-function attackingHighOrLow(enemyChoice, playerChoice){
+function attackingHighOrLow(enemyChoice, playerChoice,pHealth,eHealth){
+    console.log("player health"+ pHealth);
+    console.log("enemy health"+eHealth);
     attackHigh.style.display = "none";
     attackLow.style.display = "none";
+    backToEnemyAttackButton.style.display = "inline";
+    backToEnemyAttackButton.textContent = "Next";
     if (enemyChoice === playerChoice){
         description.textContent = `You have attacked ${playerChoice}, and the enemy has defended ${enemyChoice}, taking no damage.`
+        backToEnemyAttackButton.addEventListener('click', function(){enemyAttackAgain(pHealth,eHealth)});
     }
     else{
-        damage = Math.floor(Math.random() * -10) - 1;
+        damage = Math.floor(Math.random() * 10) - 1;
         attackScore = playerPurchases.Weapons.AttackScore;
-        damage = damage - attackScore;
-        updatedHealth = 30
-        enemyHealthLog.push(damage)
-        for(let i = 0; i<enemyHealthLog.length;i++){
-            updatedHealth += i;
-        }
-        hidingEnemyHealth.textContent = updatedHealth;
-        description.textContent = `You have attacked ${playerChoice}, and the enemy has defended ${enemyChoice}, taking ${damage} health. The enemy has ${updatedHealth} remaining.`
-
+        damage = damage + attackScore;
+        updatedEnemyHealth = eHealth - damage;
+        description.textContent = `You have attacked ${playerChoice}, and the enemy has defended ${enemyChoice}, taking ${damage} health. The enemy has ${updatedEnemyHealth} remaining.`
+        backToEnemyAttackButton.addEventListener('click', function(){enemyAttackAgain(pHealth,updatedEnemyHealth)});
     }
 }
 
 
-function enemyAttackAgain(){
-
+function enemyAttackAgain(pHealth,eHealth){
+    console.log("player health"+ pHealth);
+    console.log("enemy health"+eHealth);
+    if(eHealth <= 0){
+        enemyDeath();
+    }
+    else{
+        blockHigh.style.display = "inline";
+        backToEnemyAttackButton.style.display = "none"
+        description.textContent = "Select your defense."
+    
+        enemyChoiceIndex = Math.floor(Math.random() * 2);
+        enemyChoice = fightOptions[enemyChoiceIndex];
+    
+        var enemyChoiceIndexBackup = Math.floor(Math.random() * 2);
+        var enemyChoiceBackup = fightOptions[enemyChoiceIndexBackup];
+    
+        blockHigh.style.display = "inline";
+        blockHigh.textContent = "Block high";
+        blockHigh.addEventListener('click',function(){blockResult(enemyChoice,enemyChoiceBackup,"High",pHealth,eHealth)});
+        blockLow.style.display = "inline";
+        blockLow.textContent = "Block low";
+        blockLow.addEventListener('click',function(){blockResult(enemyChoice,enemyChoiceBackup,"Low",pHealth,eHealth)});
+    }
 }
 
 function playerDeath(){
-
+    monster.style.display = "none";
+    loseScreen.style.display = "block";
+    nextFightButton.style.display = "none";
+    description.textContent = `The Creature has defeated you. The community will remain in harm's way until the next hero comes along.`
 }
 
 function enemyDeath (){
-
+    blockLow.style.display = "none";
+    blockHigh.style.display = "none";
+    monster.style.display = "none";
+    winScreen.style.display = "block";
+    description.textContent = `You have defeated the Creature! The community rejoices. They are finally safe.`
+    backToEnemyAttackButton.style.display = "none";
 }
 
 
@@ -769,10 +802,10 @@ const playerPurchases = {
         {
         "Type":"Healing",
         "Use":"Self",
-        "HealthImpact":10,
+        "HealthImpact":10
         }
 };
-//const characterTraits = {"Mind": 10, "Body": 5, "Soul": 2}
+const characterTraits = {"Mind": 10, "Body": 5, "Soul": 2}
 
 
 function cheatStart(){
