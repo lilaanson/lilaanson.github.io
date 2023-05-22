@@ -10,6 +10,7 @@ const townCenter = document.getElementById("townCenter");
 const introPic = document.getElementById("intro");
 const backGroundTint = document.getElementById("centered");
 const potionShopPic = document.getElementById("potionShop");
+const armoryPic = document.getElementById("armory");
 const buttonBegin = document.getElementById("buttonBegin");
 const potionOptions = document.getElementById("potions");
 const gates = document.getElementById("gates");
@@ -25,6 +26,7 @@ const hidingMoney = document.getElementById("hidingMoney");
 const hidingEnemyHealth = document.getElementById("hidingEnemyHealth");
 const winScreen = document.getElementById("winScreen");
 const loseScreen = document.getElementById("loseScreen");
+const weapons = document.getElementById("weapons");
 
 //BUTTONS
 var button1 = document.createElement("Button");
@@ -73,6 +75,13 @@ var attackHigh = document.createElement("Button");
 attackHigh.setAttribute("class","button");
 var attackLow = document.createElement("Button");
 attackLow.setAttribute("class","button");
+var seeWeapons = document.createElement("Button");
+seeWeapons.setAttribute("class","button");
+var buyEnergyButton = document.createElement("Button");
+buyEnergyButton.setAttribute("class","button");
+var buyAstralButton = document.createElement("Button");
+buyAstralButton.setAttribute("class","button");
+
 
 buttonHolder.appendChild(button1);
 buttonHolder.appendChild(button2);
@@ -82,6 +91,7 @@ buttonHolder.appendChild(button5);
 buttonHolder.appendChild(button6);
 buttonHolder.appendChild(button7);
 buttonHolder.appendChild(button8);
+buttonHolder.appendChild(buyEnergyButton);
 buttonHolder.appendChild(potionButton);
 buttonHolder.appendChild(pinkButton);
 buttonHolder.appendChild(backButton);
@@ -97,7 +107,8 @@ buttonHolder.appendChild(useWeaponButton);
 buttonHolder.appendChild(backToEnemyAttackButton);
 buttonHolder.appendChild(attackHigh);
 buttonHolder.appendChild(attackLow);
-
+buttonHolder.appendChild(seeWeapons);
+buttonHolder.appendChild(buyAstralButton);
 
 //INITIALIZING
 buttonHolder.style.display = "none";
@@ -144,7 +155,11 @@ attackHigh.style.display = "none";
 attackLow.style.display = "none";
 winScreen.style.display = "none";
 loseScreen.style.display = "none";
-
+armoryPic.style.display = "none";
+weapons.style.display = "none";
+buyEnergyButton.style.display = "none";
+buyAstralButton.style.display = "none";
+seeWeapons.style.display = "none";
 
 button5.addEventListener('click', intro);
 
@@ -328,12 +343,15 @@ function pickMoney2(){
     introPic.style.display = "none";
     hidingMoney.textContent = money;
 }
-const whereToGo = "Choose where you would like to go. It is recommended that you prepare before heading outside of the gates. ***THE TAVERN AND ARMORY ARE CURRENTLY CLOSED. YOU HAVE BEEN GIVEN A WEAPON. FOR THE SAKE OF TIME, GO TO THE POTION SHOP AND OUTSIDE.*****";
+const whereToGo = "Choose where you would like to go. It is recommended that you prepare before heading outside of the gates. ***THE TAVERN IS CURRENTLY CLOSED.*****";
 
 
 function actuallyBegin(){
+    weapons.style.display = "none";
     money = hidingMoney.textContent;
+    armoryPic.style.display = "none";
     title.style.display = "block";
+    seeWeapons.style.display = "none";
     title.textContent = `Health: ${health} | ${money} drachmas`;
     backFromShopButton.style.display = "none";
     potionOptions.style.display = "none";
@@ -342,6 +360,8 @@ function actuallyBegin(){
     blueButton.style.display = "none";
     pinkButton.style.display = "none";
     backButton.style.display = "none";
+    buyAstralButton.style.display = "none";
+    buyEnergyButton.style.display = "none";
     backButton.style.display = "none"
     diceRollsTitle.style.display = "none";
     diceResult.style.display = "none";
@@ -366,7 +386,6 @@ function actuallyBegin(){
 //const playerHealthLog = [];
 //const enemyHealthLog = [];
 var enemyHealth = 30;
-
 // hit impact out of 10, health out of 30?
 const possiblePurchases = {
     "Weapons": [ 
@@ -392,15 +411,8 @@ const possiblePurchases = {
         "AttackScore":10,
         }]
 };
-console.log(possiblePurchases);
 const playerPurchases = {
-    "Weapons": [
-        {
-        "Type":"Energy Field",
-        "DefensiveScore":4,
-        "AttackScore":2
-        }
-    ],
+    "Weapons": [],
     "Potions": []
 };
 
@@ -472,14 +484,14 @@ function potionPurchasing(money){
     button8.style.display = "none";
     potionShopPic.style.display = "none";
     potionOptions.style.display = "block";
-    description.style.display = "none";
+    description.textContent = "Purchase a potion or return to town center."
     potionButton.style.display = "none";
     pinkButton.style.display = "inline";
     backButton.style.display = "inline";
     blueButton.style.display = "inline";
-    pinkButton.textContent = "Purchase (40 drachmas)";
+    pinkButton.textContent = "Purchase Healing";
     backButton.textContent = "Back to Town Center";
-    blueButton.textContent = "Purchase (30 drachmas)";
+    blueButton.textContent = "Purchase Harming";
     pinkButton.addEventListener('click', function(){potionChoice("healing")});
     blueButton.addEventListener('click', function(){potionChoice("harming")});
     backButton.addEventListener('click', potionShopBackToTown)
@@ -517,12 +529,98 @@ function potionShopBackToTown(){
 }
 
 function tavern(){
+    
+}
+var beenToArmory = false;
+var purchasedAtArmory = false;
+function armory(status){
+    if(beenToArmory ===  false && purchasedAtArmory === false){
+        townCenter.style.display = "none";
+        armoryPic.style.display = "block";
+        description.textContent = "A rush of cold air passes by you as you step into the armory. The man running the shop is gruff and doesn't say much, but he offers you a choice between two weapons."
+        button4.style.display = "none";
+        button6.style.display = "none";
+        button7.style.display = "none";
+        button8.style.display = "none";
+        seeWeapons.style.display = "inline";
+        backFromShopButton.style.display = "inline";
+        backFromShopButton.textContent = "Back to Town Center"
+        seeWeapons.addEventListener('click',seeWeaponChoices);
+        seeWeapons.textContent = "See Weapons";
+        beenToArmory === true
+    }
+    else if(beenToArmory === true && purchasedAtArmory === false){
+        seeWeaponChoices();
+    }
+    else if(status === "done"){
+        weapons.style.display = "none";
+        armoryPic.style.display = "block";
+        description.textContent = `"It might not be enough, but it's the best I can do for you."`
+        purchasedAtArmory = true;
+        buyAstralButton.style.display = "none";
+        buyEnergyButton.style.display = "none";
+
+    }
+    else if(purchasedAtArmory === true){
+        description.textContent = `There is no one here to help you.`
+        backFromShopButton.style.display = "inline";
+        townCenter.style.display = "none";
+        armoryPic.style.display = "block";
+        button4.style.display = "none";
+        button6.style.display = "none";
+        button7.style.display = "none";
+        button8.style.display = "none";
+    }
+}
+function seeWeaponChoices(){
+    description.textContent = "Purchase a weapon or return to town center."
+    seeWeapons.style.display = "none";
+    armoryPic.style.display = "none";
+    weapons.style.display = "block";
+    button4.style.display = "none";
+    button6.style.display = "none";
+    button7.style.display = "none";
+    button8.style.display = "none";
+    beenToArmory = true;
+    buyAstralButton.style.display = "inline";
+    buyAstralButton.textContent = "Buy Astral Rune";
+    buyAstralButton.addEventListener('click',function(){armoryResults("astral")});
+    buyEnergyButton.addEventListener('click',function(){armoryResults("energy")});
+    buyEnergyButton.textContent = "Buy Energy Field";
+    buyEnergyButton.style.display = "inline";
+    backFromShopButton.style.display = "inline";
+    backFromShopButton.textContent = "Back to Town Center";
+}
+function armoryResults(type){
+    weapons.style.display = "none";
+    armoryPic.style.display = "block";
+    if(type === "astral"){
+        updatedMoney = hidingMoney.textContent - 50;
+        playerPurchases.Weapons.push(possiblePurchases.Weapons[1])
+        buyAstralButton.style.display = "none";
+        buyEnergyButton.style.display = "none";
+        weapons.style.display = "none";
+        purchasedAtArmory = true;
+        title.textContent = `Health: ${health} | ${updatedMoney} drachmas`;
+        hidingMoney.textContent = updatedMoney;
+        console.log("in results");
+        armory("done");
+
+    }
+    else if(type==="energy"){
+        purchasedAtArmory = true;
+        updatedMoney = hidingMoney.textContent - 40;
+        hidingMoney.textContent = updatedMoney;
+        playerPurchases.Weapons.push(possiblePurchases.Weapons[0])
+        buyAstralButton.style.display = "none";
+        buyEnergyButton.style.display = "none";
+        weapons.style.display = "none";
+        title.textContent = `Health: ${health} | ${updatedMoney} drachmas`;
+        armory("done");
+    }
 
 }
 
-function armory(){
-
-}
 title.textContent = `Health: ${health} | ${money} drachmas`;
 var outsideTally = 0;
 var attackFakeMonster = false;
@@ -541,7 +639,7 @@ function outside(){
         outsideTally += 1;
     }
     else if(outsideTally === 1){
-        description.textContent = `With your weapons in hand, you walk out into the darkness. The moonlight coldly reflects on the leaf-lined ground, showing you the path ahead, but also announcing your every step.`
+        description.textContent = `With your W in hand, you walk out into the darkness. The moonlight coldly reflects on the leaf-lined ground, showing you the path ahead, but also announcing your every step.`
         gates.style.display = "none";
         woods2.style.display = "block";
         outsideTally +=1;
@@ -796,19 +894,6 @@ function enemyDeath (){
     description.textContent = `You have defeated the Creature! The community rejoices. They are finally safe.`
     backToEnemyAttackButton.style.display = "none";
 }
-
-
-
-
-
-///////DELETE ALL BEFORE STARTING!
-//////////////////
-//////////////////
-////////////
-////////////////////
-
-
-
 
 
 
