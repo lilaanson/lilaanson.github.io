@@ -27,6 +27,7 @@ const hidingEnemyHealth = document.getElementById("hidingEnemyHealth");
 const winScreen = document.getElementById("winScreen");
 const loseScreen = document.getElementById("loseScreen");
 const weapons = document.getElementById("weapons");
+const tavernPic = document.getElementById("tavern");
 
 //BUTTONS
 var button1 = document.createElement("Button");
@@ -81,6 +82,8 @@ var buyEnergyButton = document.createElement("Button");
 buyEnergyButton.setAttribute("class","button");
 var buyAstralButton = document.createElement("Button");
 buyAstralButton.setAttribute("class","button");
+var tavernNextButton = document.createElement("Button");
+tavernNextButton.setAttribute("class","button");
 
 
 buttonHolder.appendChild(button1);
@@ -109,6 +112,7 @@ buttonHolder.appendChild(attackHigh);
 buttonHolder.appendChild(attackLow);
 buttonHolder.appendChild(seeWeapons);
 buttonHolder.appendChild(buyAstralButton);
+buttonHolder.appendChild(tavernNextButton);
 
 //INITIALIZING
 buttonHolder.style.display = "none";
@@ -160,6 +164,8 @@ weapons.style.display = "none";
 buyEnergyButton.style.display = "none";
 buyAstralButton.style.display = "none";
 seeWeapons.style.display = "none";
+tavernPic.style.display = "none";
+tavernNextButton.style.display = "none";
 
 button5.addEventListener('click', intro);
 
@@ -347,6 +353,7 @@ const whereToGo = "Choose where you would like to go. It is recommended that you
 
 
 function actuallyBegin(){
+    tavernPic.style.display = "none";
     weapons.style.display = "none";
     money = hidingMoney.textContent;
     armoryPic.style.display = "none";
@@ -527,9 +534,30 @@ function potionShopBackToTown(){
     beenToPotionShop = true;
     actuallyBegin();
 }
-
+var bannedFromTavern = false;
+var tavernTally = 0;
+tavernNextButton.addEventListener('click',tavern)
 function tavern(){
-    
+    tavernNextButton.style.display = "inline";
+    tavernNextButton.textContent = "Next";
+    townCenter.style.display = "none";
+    tavernPic.style.display = "block";
+    button4.style.display = "none";
+    button6.style.display = "none";
+    button7.style.display = "none";
+    button8.style.display = "none";
+    if(tavernTally === 0){
+        tavernTally += 1;
+        description.textContent = "At the edge of the town center, you step through a small door at the foot of a rocky hill. A short staircase extends in front of you, only visible from an orange light at the very bottom. As you reach the last stair, you look around at a crowded room with a low hanging ceiling. Almost every chair is full and bits of conversations flow past you from every corner."
+    }
+    else if(tavernTally === 1){
+        tavernTally += 1;
+        description.textContent = "In the tavern, you can buy drinks and engage in conversation. These conversations can reveal tips on how to have a better chance at defeating the Creature. By buying drinks, you can temporarily increase your charisma, which will earn you more positive responses in conversation. However, if you buy too many drinks, you may rapidly start getting more hostile responses. If you get three hostile responses, you will be kicked out."
+    }
+    else if(tavernTally === 2){
+        tavernTally += 1;
+        description.textContent = "You take a seat at the"
+    }
 }
 var beenToArmory = false;
 var purchasedAtArmory = false;
