@@ -23,7 +23,15 @@ def norm(a):
 
 
 class TestFunction(unittest.TestCase):
-    pass
+    def vector_add_test(self):
+        A = [10,11,12]
+        B = [3,6,9]
+        self.assertEqual(vector_add(A,B), [13, 17, 21])
+
+    def vector_add_test2(self):
+        A = [1,2,3]
+        B = [1,2,3]
+        self.assertEqual(vector_add(A,B), [1, 4, 6])
 
 if __name__ == '__main__':
     unittest.main()
