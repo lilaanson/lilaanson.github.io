@@ -1,0 +1,197 @@
+body{
+    background-color: #000;
+    color: white;
+    font-family: 'Kanit', sans-serif;
+    font-size: 20px;
+    margin: 8px;
+    padding: 0px;
+    border: none;
+    cursor: url('/img/purpleCircle.png'), auto;
+}
+.title{
+    font-family: 'Oswald';
+    text-align: center;
+    line-height: 0;
+}
+.date{
+    font-size: 2vw;
+    line-height:.1em;
+}
+.colorado, .symphony, .classics{
+    font-size: 11vw;
+}
+.colorado{
+    animation: coloradoAnimation ease 1.5s;
+    animation-iteration-count: 1;
+    top:0px;
+}
+@keyframes coloradoAnimation{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+.symphony{
+    animation: symphonyAnimation ease 2.5s;
+    animation-iteration-count: 1;
+    font-size: 13vw;
+}
+@keyframes symphonyAnimation{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+.classics{
+    animation: classicsAnimation ease 3.5s;
+    animation-iteration-count: 1;
+}
+@keyframes classicsAnimation{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+.date{
+    animation: dateAnimation ease 4.5s;
+    animation-iteration-count: 1;
+}
+@keyframes dateAnimation{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+.circlesFlex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 4em 0 4em;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.circles{
+    width:20px;
+    display: inline;
+}
+.circle1{
+    animation: circle1Anim 3s;
+    animation-iteration-count: infinite;
+}
+@keyframes circle1Anim{
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+     }
+    100% {
+        opacity: 1;
+    }
+}
+.circle2{
+    animation: circle2Anim 3s;
+    animation-delay: .2s;
+    animation-iteration-count: infinite;
+}
+@keyframes circle2Anim{
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+     }
+    100% {
+        opacity: 1;
+    }
+}
+.circle3{
+    animation: circle3Anim 3s;
+    animation-delay: .4s;
+    animation-iteration-count: infinite;
+}
+@keyframes circle3Anim{
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+     }
+    100% {
+        opacity: 1;
+    }
+}
+.circle4{
+    animation: circle4Anim 3s;
+    animation-delay: .6s;
+    animation-iteration-count: infinite;
+}
+@keyframes circle4Anim{
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+     }
+    100% {
+        opacity: 1;
+    }
+}
+.circle5{
+    animation: circle5Anim 3s;
+    animation-delay: .8s;
+    animation-iteration-count: infinite;
+}
+@keyframes circle5Anim{
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+     }
+    100% {
+        opacity: 1;
+    }
+}
+
+.copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50%;
+    width: 100%;
+    align-items: center;
+}
+.list {
+    height: 100px;
+    width: 87%;
+    flex-basis: 100px;
+}
+
+.one {
+    background-color: #000;
+}
+.one:hover, .two:hover, .three:hover, .four:hover, .five:hover, .six:hover, .seven:hover, .eight:hover{
+    background-color: #0c0c0c;
+}
+
+.two {
+    background-color: #000;
+}
+
+
+.three {
+    background-color: #000;
+}

@@ -33,11 +33,11 @@ body{
     top: 27vh;
 }
 #box3{
-position: sticky;
-width: 73vw;
-height: 175vh;
-border-radius: 10px;
-background-color: orangered;
+    position: sticky;
+    width: 73vw;
+    height: 175vh;
+    border-radius: 10px;
+    background-color: orangered;
 }
 #text3 {
     position: sticky;
