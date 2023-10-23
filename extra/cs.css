@@ -173,16 +173,33 @@ body{
     height: 50%;
     width: 100%;
     align-items: center;
+    line-height:1.2;
+}
+.name{
+    font-size:1.4em;
+    line-height:0;
+}
+.featured, .days{
+    color:#e8e8e8;
+    font-size: .9em;
 }
 .list {
-    height: 100px;
     width: 87%;
-    flex-basis: 100px;
+    flex-basis: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 25px;
 }
-
+.description{
+    width: 95vw;
+    font-size: .8em;
+    text-align: center;
+}
 .one {
     background-color: #000;
 }
+
 .one:hover, .two:hover, .three:hover, .four:hover, .five:hover, .six:hover, .seven:hover, .eight:hover{
     background-color: #0c0c0c;
 }
@@ -194,4 +211,22 @@ body{
 
 .three {
     background-color: #000;
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .list{
+        flex-direction: column;
+        gap:0px;
+    }
+    .copy{
+        align-items: center;
+    }
+    .copy p{
+        text-align: center;
+    }
+    .description{
+        width: auto;
+    }
 }
