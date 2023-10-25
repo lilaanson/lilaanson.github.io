@@ -174,43 +174,44 @@ body{
     width: 100%;
     align-items: center;
     line-height:1.2;
+    gap: 2em;
 }
+
 .name{
-    font-size:1.4em;
-    line-height:0;
+    font-size:1.5em;
+    line-height:1em;
+    text-align: center;
+    flex-wrap: wrap;
 }
-.featured, .days{
+.shade{
+    margin: auto;
+}
+.shade:hover{
+    background-color: #031013;
+}
+.featured, .days, .repo{
     color:#e8e8e8;
     font-size: .9em;
 }
+.days{
+    text-align: right;
+}
+.repo{
+    text-align: center;
+}
 .list {
     width: 87%;
-    flex-basis: 20px;
+    flex-basis: 2em;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 25px;
+    margin: auto;
 }
 .description{
     width: 95vw;
     font-size: .8em;
     text-align: center;
-}
-.one {
-    background-color: #000;
-}
-
-.one:hover, .two:hover, .three:hover, .four:hover, .five:hover, .six:hover, .seven:hover, .eight:hover{
-    background-color: #0c0c0c;
-}
-
-.two {
-    background-color: #000;
-}
-
-
-.three {
-    background-color: #000;
 }
 
 
