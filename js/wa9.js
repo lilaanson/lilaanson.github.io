@@ -20,11 +20,11 @@ var insertZ = ["scared out of his mind", "so annoyed", "always such a daredevil"
 randomize.addEventListener('click', result);
 
 function result() {
-    var newStory = storyText;
-    var xItem = randomValueFromArray(insertX);
-    var yItem = randomValueFromArray(insertY);
-    var zItem = randomValueFromArray(insertZ);
-    newStory = newStory.replaceAll(":insertx:", xItem);
+    let newStory = storyText;
+    const xItem = randomValueFromArray(insertX);
+    const yItem = randomValueFromArray(insertY);
+    const zItem = randomValueFromArray(insertZ);
+    newStory = newStory.replace(":insertx:", xItem);
     newStory = newStory.replace(":inserty:", yItem);
     newStory = newStory.replace(":insertz:", zItem);
 

@@ -9,9 +9,11 @@ mysteryOne.addEventListener('click',mysteryOneCards);
 bananaOne.addEventListener('click',bananaOneCards);
 speedOne.addEventListener('click',speedOneCards);
 
-const mysteryOneArray = ["1","2","3","4","5","6"];
-const bananaOneArray = ["option one. here it will give instructions on something", "option two, this is now giving a different answer"];
-const speedOneArray = ["option one. here it will give instructions on something", "option two, this is now giving a different answer"];
+// only 1/3 of all residential buildings have the potential to be wheelchair accessible
+const mysteryOneArray = ["You got a star! On your next turn, your moves forward are doubled.","Unfortunately, you cannot collect this mystery box.","Unfortunately, you cannot collect this mystery box.","Unfortunately, you cannot collect this mystery box.","Unfortunately, you cannot collect this mystery box.","You got a POW Block! Move everyone except yourself and the person in the lead 2 spaces back. Any special spaces landed on do not count."];
+const bananaOneArray = ["You spun out on a banana. Next turn is skipped", "You spun out on a banana. Next turn is skipped.","You spun out on a banana. Next turn is skipped", "You avoided a banana."];
+// under 4% are currently accessible
+const speedOneArray = ["Unfortunately, you cannot use this speed boost.", "Move ahead 4 spaces!"];
 
 function mysteryOneCards(){
     addText.replaceChildren();
@@ -25,8 +27,13 @@ function bananaOneCards(){
 }
 function speedOneCards(){
     addText.replaceChildren();
-    var selection = speedOneArray[Math.floor(Math.random()*speedOneArray.length)];
-    addText.innerHTML += selection;
+    var selection = Math.floor(Math.random()*101);
+    if(selection > 4){
+        addText.innerHTML += speedOneArray[0]
+    }   
+    else{
+        addText.innerHTML += speedOneArray[1]
+    }
 }
 
 /////////////////////////////////////////////////////////////////FOR ROW TWO
