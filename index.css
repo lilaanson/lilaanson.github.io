@@ -297,7 +297,7 @@ ul {
 }
 
 
-@media only screen and (max-width: 1150px) {
+@media only screen and (min-width: 1150px) {
     #name {
         font-size: 54px;
         font-family: "Oswald";
@@ -331,4 +331,48 @@ ul {
         width: 230px;
     }
 
+}
+
+@media only screen and (max-width: 800px) {
+    .content{
+        display: flex;
+        flex-direction: column;
+    }
+    #left{
+        position: relative;
+        top: 10px;
+        width:100%;
+    }
+    #bio{
+        width:100%;
+    }
+    #description1{
+        padding: 10px 20px 10px 10px;
+    }
+    #description2{
+        padding: 10px 20px 10px 10px;
+    }
+    #description2{
+        padding: 10px 20px 10px 10px;
+    }
+    #description2{
+        padding: 10px 20px 10px 10px;
+    }
+    #cs{
+        width: 90%;
+    }
+    #bookmania{
+        margin: auto;
+        padding: 0px;
+        width: 100%;
+    }
+    #forEmma{
+        margin: auto;
+        padding: 10vw;
+        width: 80%;
+    }
+    #bluebird{
+        padding:10px;
+        width: 100%;
+    }
 }

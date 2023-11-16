@@ -1,0 +1,22 @@
+body{
+    font-size: 10px;
+    padding: 2em;
+    line-height:0;
+    margin:auto;
+}
+.name{
+    font-family:"Bebas Neue";
+    font-size: 7em;
+    color: #121212;
+    line-height: 0;
+}
+hr{
+    font-size: 0;
+    line-height:0;
+}
+
+.line{
+    
+    margin: auto;
+    width: 87%;
+}

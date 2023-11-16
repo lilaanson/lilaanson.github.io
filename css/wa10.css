@@ -10,7 +10,7 @@ body {
   font-size: 100px;
   left: 240px;
   animation-name: text1Move;
-  animation-duration: 4s;
+  animation-duration: 10s;
   animation-iteration-count:infinite;
   z-index: 999;
   } 
@@ -21,7 +21,7 @@ body {
   font-size: 100px;
   right: 175px;
   animation-name: text2Move;
-  animation-duration: 4s;
+  animation-duration: 10s;
   animation-iteration-count:infinite;
   z-index: 1000;
 }
