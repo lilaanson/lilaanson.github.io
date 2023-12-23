@@ -26,8 +26,49 @@ const employeeDetails = {
         }
     ]
 };
+
+const employees1 = [
+    {
+      firstName: "Sam",
+      department: "Tech",
+      designation: "Manager",
+      salary: 40000,
+      raiseEligible: true
+    },
+    {
+      firstName: "Mary",
+      department: "Finance",
+      designation: "Trainee",
+      salary: 18500,
+      raiseEligible: true
+    },
+    {
+      firstName: "Bill",
+      department: "HR",
+      designation: "Executive",
+      salary: 21200,
+      raiseEligible: false
+    }
+  ];
 console.log("Problem 1:")
-console.log(employeeDetails);
+console.log(employees1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // PROBLEM 2
 
@@ -40,8 +81,8 @@ console.log("Problem 2:")
 console.log(company)
 
 //PROBLEM 3
-employeeDetails.employees[3] = {"Name": "Anna", "Department": "Tech", "Designation": "Executive", "Salary": 25600, "Raise Eligible": "False"} ;
-console.log("Problem :")
+employeeDetails.employees[3] = {"Name": "Anna", "Department": "Tech", "Designation": "Executive", "Salary": 25600, "Raise Eligible": "False"};
+console.log("Problem 3:")
 console.log(employeeDetails);
 
 //PROBLEM 4
