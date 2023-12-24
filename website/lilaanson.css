@@ -1,22 +1,123 @@
 body{
     font-size: 10px;
     padding: 2em;
-    line-height:0;
-    margin:auto;
+    font-family:"Rethink Sans";
+    padding: 15px;
 }
 .name{
-    font-family:"Bebas Neue";
-    font-size: 7em;
+    font-size: 3em;
     color: #121212;
     line-height: 0;
+    align-items: center;
 }
-hr{
-    font-size: 0;
-    line-height:0;
+#topFlex{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
 }
-
-.line{
+.inner{
+    padding: 1vw;
+    font-size: 1.5em;
+    color: #656565;
+    line-height:1;
+}
+.inner:hover{
+    color: #222222;
+}
+.top{
+    flex-shrink: 0;
+    line-height: 0;
+    align-items: center;
     
+}
+#topMiddle{
+    /*width: 55vw;*/
+    width: 60%;
+    flex: 3 1 auto;
+}
+.content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     margin: auto;
-    width: 87%;
+    
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    height: 25vw;
+    width: 100%;
+    margin: auto;
+}
+.item{
+    width: 33%;
+}
+.image{
+    width: 100%;
+}
+.item:hover{
+    overflow: hidden;
+    opacity: 70%;
+    inset:0;
+    z-index: -1;
+}
+.form{
+    font-size: 3em;
+    width: 100%;
+    height:100%;
+}
+.form:hover{
+    visibility: visible;
+}
+.two{
+    background-color: aquamarine;
+}
+.three{
+    background-color: palegoldenrod;
+}
+.four{
+    background-color: pink;
+}
+.five{
+    background-color: green;
+}
+.six{
+    background-color: grey;
+}
+.seven{
+    background-color: orange;
+}
+.eight{
+    background-color: yellow;
+}
+.nine{
+    background-color: lightblue;
+}
+.ten{
+    background-color: lightcoral;
+}
+.eleven{
+    background-color: lightsalmon;
+}
+.twelve{
+    background-color: purple;
+}
+#backToTop{
+    color: #656565;
+    margin:auto;
+    align-content: space-around;
+}
+#backToTop:hover{
+    color: #222222;
+    cursor: pointer;
+}
+.backToTop{
+    display: flex;
+    padding: 50px;
+    margin:auto;
+    align-content: space-around;
+    font-size: 1.5em;
+    
 }

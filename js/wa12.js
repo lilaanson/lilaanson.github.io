@@ -56,20 +56,6 @@ console.log(employees1);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // PROBLEM 2
 
 const company = {
@@ -80,10 +66,19 @@ const company = {
 console.log("Problem 2:")
 console.log(company)
 
+
+
+
+
+
 //PROBLEM 3
-employeeDetails.employees[3] = {"Name": "Anna", "Department": "Tech", "Designation": "Executive", "Salary": 25600, "Raise Eligible": "False"};
+employeeDetails.employees[3] = 
+{"Name": "Anna", "Department": "Tech", "Designation": "Executive", "Salary": 25600, "Raise Eligible": "False"};
 console.log("Problem 3:")
 console.log(employeeDetails);
+
+
+
 
 //PROBLEM 4
 var totalSalary = 0;
