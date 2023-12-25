@@ -116,5 +116,62 @@ a{
     width: 40vw;
     margin:auto;
     padding: 60px 0 0 0;
-    
+
 }
+/*marble maze*/
+.madnessImg{
+    width:100%;
+    display: flex;
+    align-content: space-around;
+    margin:auto;
+}
+#madnessTopImg{
+    width:35vw;
+    margin:auto;
+}
+.title{
+    font-size:2.5em;
+    padding: 0 10vw 0 10vw;
+    font-weight: 500;
+}
+.description{
+    padding: 0 10vw 0 10vw;
+    font-size: 1.9em;
+    line-height:1.5;
+    color: #656565;
+    font-family:"Roboto";
+}
+#madnessSet1{
+    width:55vw;
+    margin:auto;
+}
+#madnessSet2{
+    width:55vw;
+    margin:auto;  
+}
+#madnessSet3{
+    width:55vw;
+    margin:auto;  
+}
+#madnessSet4{
+    width:65vw;
+    margin:auto;  
+}
+.video{
+    width:100%;
+    display: flex;
+    align-content: space-around;
+    margin:auto; 
+}
+#marbleVideo{
+    width:65vw;
+    height: 65vh;
+    margin:auto;
+}
+.marbleLink{
+    color: lightcoral;
+}
+.marbleLink:hover{
+    color: #222222;
+}
+

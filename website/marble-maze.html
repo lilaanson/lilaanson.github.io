@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;500&family=Rethink+Sans:wght@400;500&family=Bebas+Neue&family=Kanit:wght@300&family=Oswald&family=Source+Code+Pro:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="lilaanson.css">
+    <script src="lilaanson.js" defer></script>
+    <title>marble-maze</title>
+</head>
+<body>
+    <div id="topFlex">
+        <div id="topLeft" class="top">
+            <p class="name">LILA ANSON</p>
+        </div>
+        <div id="topMiddle" class="top">
+        </div>
+        <div class="top">
+            <a class="inner projects" href="http://lilaanson.me/website/lilaanson.html">PROJECTS</a>
+        </div>
+        <div class="top">
+            <a class="inner about" href="http://lilaanson.me/website/about.html">ABOUT ME</a>
+        </div>
+        <div class="top">
+            <a class="inner contact" href="http://lilaanson.me/website/contact.html">CONTACT</a>
+        </div>
+        <div class="top">
+            <p class="inner linked">LI</p>
+        </div>
+        <div class="top">
+            <p class="inner git">GH</p>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="madnessImg">
+        <img id="madnessTopImg" src="/img/marbleMadness.jpg">
+    </div>
+    <p class="title">MARBLE MAZE</p>
+    <p class="description">Our final project will involve creating a marble maze that is controlled by two servo motors to tilt the maze in the x and y axis, allowing the user to roll the marble in their desired direction. The movements of the maze will be controlled by an accelerometer in a hand-held controller that mirrors the user's hand movements when they tilt it back and forth. This creates a unique interactive experience that tests one's hand-eye coordination.<br><br>
+
+        The first step in our project is to design and construct the maze. We plan to create a custom maze using a 3D printer, which will allow us to easily customize the maze design and make it as complex as we want. The maze will be designed with a tilt mechanism that will allow it to be moved in the x and y axis using the servo motors. We will also incorporate an accelerometer into the hand-held controller to track the user's hand movements and adjust the position of the maze accordingly.<br><br>
+        
+        The servo motors will be connected to the Arduino board, which will control their movement. In addition to the Arduino elements, we also used wood and laser cutting to create the outer structure of the maze. We designed the maze walls using Adobe Illustrator and then laser cut them out of plywood to ensure precision and accuracy. The wood walls were then assembled to create the outer frame of the maze, which gives it a sleek and professional appearance. The use of laser cutting and wood adds a tactile element to the project, allowing users to feel and interact with the maze physically. This also adds an element of durability to the maze, ensuring that it can withstand frequent use. Overall, the combination of electronics and physical design elements creates an immersive and engaging experience for users.<br><br>
+        
+        Overall, our marble maze project is an exciting challenge that will test our skills in electronics, programming, and 3D design. We believe that the interactive nature of the project will make it an engaging and enjoyable experience for users of all ages. By incorporating a variety of Arduino elements, we hope to create a maze that is not only challenging to solve but also visually appealing and entertaining to play.<br><br><br><br>
+        
+        
+        
+        This project is made by Lila Anson, Jason Fontillas, and Tomas Garcia.</p>
+    <br>
+    <p class="title">SUPPLIES</p>
+    <ul class="description">
+        <li>Arduino Uno Microcontroller</li>
+        <li>3D Printer + PLA</li>
+        <li>Plywood + Laser Cutting Machine</li>
+        <li>(x2) Metal Dowel</li>
+        <li>Circuit Wires + Male/Female Wire + Solid Core Wire</li>
+        <li>Soldering Iron + Solder</li>
+        <li>Protoboard</li>
+        <li>Wood Glue</li>
+        <li>Hot Glue Gun</li>
+        <li>LCD1602 Module</li>
+        <li>HiLetgo GY-521 MPU-6050 3 Axis Accelerometer Gyroscope Module</li>
+        <li>(2x) Servos</li>
+        <li>Photoresistor</li>
+        <li>Potentiometer</li>
+        <li>Black Fabric</li>
+        <li>Momentary Push Button</li>
+        <li>12mm Marble</li>
+        <li>Elastic Strap + Sewing Machine</li>
+    </ul>
+    <p class="title">STEP 1: DESIGN PROCESSING</p>
+    <div class="madnessImg">
+        <img id="madnessSet1" src="/img/picsSet2.png">
+    </div>
+    <p class="description">To begin our project, we first sketched out the desired look and dimensions for both our parts and enclosure. This allowed us to have a clear visual of what we wanted to create before moving forward with the design process.<br><br>
+
+
+
+        Once we had our sketches in place, we began creating the schematic for the project. This schematic served as a blueprint for all of the connections we needed to make on the protoboard. It was crucial to ensure that all of the connections would fit properly on the power source before continuing with our design.<br><br>
+        
+        
+        
+        By taking the time to plan and visualize our project before diving into the design process, we were able to ensure that everything was aligned properly and would fit together seamlessly. This allowed us to avoid potential mistakes and ultimately create a successful final product.</p>
+        <br>
+    <p class="title">STEP 2: 3D PRINTING THE MAZE</p>
+    <div class="madnessImg">
+        <img id="madnessSet2" src="/img/picSet3.png">
+    </div>
+    <p class="description">
+        The maze is a 6-inch by 6-inch design that was created using Fusion 360. The maze has a depth of one inch and was designed to be both intricate and entertaining. One of the key features of the maze is the inclusion of the CU Boulder ATLAS Logo, which serves as the finish line at the center of the maze. Additionally, the maze has various traps that are designed to appear large enough for the marble to pass through but are actually too small, creating an added challenge for the user. Another feature of the maze is a divot that can sometimes cause the marble to get stuck and slow down the user's progress.<br><br>
+
+
+
+    When designing a maze, it is important to create something that is both engaging and challenging for the user. To achieve this, it is recommended to first brainstorm ideas on paper and then begin the design process using a software tool such as Fusion 360. Once the design is complete, the file can be exported and converted into an STL file for printing on a 3D printer.<br><br>
+
+
+
+    In this case, the STL file was printed on an Ender 3 Pro, which is a popular 3D printer model known for its affordability and ease of use. By utilizing a 3D printer, the maze was able to be printed with high precision and accuracy, ensuring that all of the intricate details and features were captured in the final product.<br><br>
+
+
+
+    Overall, the creation of this maze required careful planning, attention to detail, and skillful use of software and hardware tools. The resulting product is a fun and challenging maze that is sure to provide hours of entertainment for its users.
+    </p>
+    <br>
+    <p class="title">STEP 3: ELECTRONIC COMPONENT</p>
+    <div class="madnessImg">
+        <img id="madnessSet3" src="/img/picsSet3.png">
+    </div>
+    <p class="description">Once we had our Fritzing schematic finalized, we moved on to prototyping our project on a breadboard. This allowed us to physically test out the connections and ensure that everything was working properly before moving on to the next stage. By using a breadboard, we were able to easily make changes and adjustments to the circuit without the need for soldering.<br><br>
+
+
+
+        After testing on the breadboard, we then transferred our circuit to a protoboard. This allowed us to create a more permanent solution and ensure that all connections were secure. We carefully followed our schematic and made all necessary connections on the protoboard. Once everything was in place, we were able to test the circuit once more to confirm that everything was working as expected.<br><br>
+        
+        
+        <a class="marbleLink" href="https://github.com/jafo3802/Marble-Maze">Github code</a>
+        
+    </p>
+    <br>
+    <p class="title">STEP 4: LASER CUTTING THE ENCLOSURE</p>
+    <div class="madnessImg">
+        <img id="madnessSet4" src="/img/picsSet4.png">
+    </div>
+    <p class="description">For the enclosure of the maze, it consisted of a box made of 1 inch by 6.7 inch rectangles sing the wood glue to connect them. The base of the enclosure measures 8 inches by 7 inches, with "teeth" along the smaller side to create a stronger support for the side panels. The large triangles cut to be 7 inches at base and 8 inches tall will attach to the base using those teeth and wood glue.</p>
+    <br>
+    <p class="title">STEP 5: FINAL DEMO</p>
+    <div class="video">
+        <iframe id="marbleVideo" width="420" height="315" src="https://www.youtube.com/embed/Ud_1WfDOpCE"></iframe>
+    </div>
+    <br>
+    <br>
+    <div class="backToTop">
+        <p id="backToTop">Back to top</p>
+    </div>
+</body>
+</html>
