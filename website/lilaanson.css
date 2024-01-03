@@ -83,17 +83,11 @@ a{
     overflow: hidden;
     opacity: 70%;
 }
-.six{
-    background-color: grey;
-}
 .seven{
-    background-color: orange;
-}
-.eight{
-    background-color: yellow;
-}
-.nine{
-    background-color: lightblue;
+    background-color: black;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 #backToTop{
     color: #656565;
@@ -113,7 +107,7 @@ a{
 }
 /*soundcloud*/
 .soundcloud{
-    width: 40vw;
+    width:65vw;
     margin:auto;
     padding: 60px 0 0 0;
 
@@ -173,5 +167,31 @@ a{
 }
 .marbleLink:hover{
     color: #222222;
+}
+/*icons*/
+.fa {
+    padding: 10px;
+    font-size: 60px;
+    width: 15px;
+    text-align: center;
+    text-decoration: none;
+    background: #007bb5;
+    color: white;
+}
+.fa:hover {
+    opacity: 0.7;
+}
+#tedTitleImg{
+    margin: auto;
+    width: 25vw;
+    position:relative;
+}
+
+#tedImg{
+    width:100%;
+    display: flex;
+    align-content: space-around;
+    margin:auto;
+    position:relative;
 }
 
