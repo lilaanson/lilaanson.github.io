@@ -86,8 +86,6 @@ a{
 .seven{
     background-color: black;
     display:flex;
-    align-items: center;
-    justify-content: center;
 }
 #backToTop{
     color: #656565;
@@ -133,6 +131,12 @@ a{
     font-size: 1.9em;
     line-height:1.5;
     color: #656565;
+    font-family:"Roboto";
+}
+.subTitle{
+    font-size:2em;
+    padding: 0 10vw 0 10vw;
+    font-weight: 500;
     font-family:"Roboto";
 }
 #madnessSet1{
@@ -193,5 +197,24 @@ a{
     align-content: space-around;
     margin:auto;
     position:relative;
+}
+#tedCoverImg{
+    padding: 8vw 0 6vw 0;
+}
+.textImages{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.textImg{
+    width:40vw;
+}
+.madeWith{
+    padding: 2vw 10vw 2vw 10vw;
+    margin:auto;
+    align-content: space-around;
+    font-size: 1.5em;
+    color: #656565;
 }
 
