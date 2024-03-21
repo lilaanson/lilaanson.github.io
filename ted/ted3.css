@@ -1,0 +1,122 @@
+body {
+    margin: 4em;
+    display:flex;
+    align-content: center;
+    justify-content: center;
+    font-size: 8px;
+}
+
+.container {
+    width: 400px;
+    height: 300px;
+    position: relative;
+
+    z-index: 100;
+    -webkit-perspective: 1300px;
+    perspective: 1300px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.page {
+	position: absolute;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transition-property: -webkit-transform;
+	transition-property: transform;
+
+	width: 50%;
+	height: 100%;
+	left: 50%;
+	-webkit-transform-origin: left center;
+	transform-origin: left center;
+}
+
+#second {
+    z-index: 103;
+    transition: transform 0.8s ease-in-out;
+}
+#third .content {
+    width: 400px;
+}
+#third{
+    z-index: 104;
+    transition: transform 0.8s ease-in-out;
+}
+#fourth {
+    z-index: 101;
+}
+
+.page > div,
+.outer,
+.content,
+.helper-class-to-make-bug-visbile {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.page > div {
+	width: 100%;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.back {
+	-webkit-transform: rotateY(-180deg);
+	transform: rotateY(-180deg);
+}
+
+.outer {
+	width: 100%;
+	overflow: hidden;
+    z-index: 999;
+}
+
+/* problematic class: `.content` */
+.content {
+    width: 200%;
+    background: black;
+    pointer-events:none;
+}
+
+
+.front .content {
+	left: -100%;
+}
+
+
+
+/* controls */
+#prev, #next {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    z-index: 999;
+}
+#prev {
+    top: 0;
+    left: 0;
+}
+#next {
+    top: 0;
+    left: 50%;
+}
+
+#coverImg{
+    width:50%;
+    float:right;
+}
+#fourth{
+    overflow-y:scroll;
+}
+p{
+    padding:5px;
+}
+h3{
+    padding:5px;
+}
