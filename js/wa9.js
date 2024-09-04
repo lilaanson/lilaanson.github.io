@@ -7,10 +7,10 @@ function randomValueFromArray(array){
     return array[random];
 }
 
-var storyText = "It was dark and 30 fahrenheit outside and they just wanted to :insertx:, but their frisbee had flown over the :inserty: and they needed to get it or Bob would be mad. It cost 20 dollars after all. Of course they made little Jason go get it. He was :insertz:."
-var insertX = ["go inside", "keep playing", "run away"];
-var insertY = ["fence", "shed", "neighbor's house"];
-var insertZ = ["scared out of his mind", "so annoyed", "always such a daredevil"];
+const storyText = "It was dark and 30 fahrenheit outside and they just wanted to :insertx:, but their frisbee had flown over the :inserty: and they needed to get it or Bob would be mad. It cost 20 dollars after all. Of course they made little Jason go get it. He was :insertz:."
+const insertX = ["go inside", "keep playing", "run away"];
+const insertY = ["fence", "shed", "neighbor's house"];
+const insertZ = ["scared out of his mind", "so annoyed", "always such a daredevil"];
 //var storyText = "It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.";
 //var insertX = ["Willy the Goblin", "Big Daddy", "Father Christmas"];
 //var insertY = ["the soup kitchen", "Disneyland", "the White House"];
@@ -24,9 +24,9 @@ function result() {
     const xItem = randomValueFromArray(insertX);
     const yItem = randomValueFromArray(insertY);
     const zItem = randomValueFromArray(insertZ);
-    newStory = newStory.replace(":insertx:", xItem);
-    newStory = newStory.replace(":inserty:", yItem);
-    newStory = newStory.replace(":insertz:", zItem);
+    newStory = newStory.replaceAll(":insertx:", xItem);
+    newStory = newStory.replaceAll(":inserty:", yItem);
+    newStory = newStory.replaceAll(":insertz:", zItem);
 
 
     if(customName.value !== '') {
