@@ -7,6 +7,18 @@ function randomValueFromArray(array){
     return array[random];
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 const storyText = "It was dark and 30 fahrenheit outside and they just wanted to :insertx:, but their frisbee had flown over the :inserty: and they needed to get it or Bob would be mad. It cost 20 dollars after all. Of course they made little Jason go get it. He was :insertz:."
 const insertX = ["go inside", "keep playing", "run away"];
 const insertY = ["fence", "shed", "neighbor's house"];
@@ -24,6 +36,10 @@ function result() {
     const xItem = randomValueFromArray(insertX);
     const yItem = randomValueFromArray(insertY);
     const zItem = randomValueFromArray(insertZ);
+
+
+
+
     newStory = newStory.replaceAll(":insertx:", xItem);
     newStory = newStory.replaceAll(":inserty:", yItem);
     newStory = newStory.replaceAll(":insertz:", zItem);
