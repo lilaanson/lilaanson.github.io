@@ -87,7 +87,6 @@ html{
   left: 33%;
   height:auto;
   bottom:22vw;
-  pointer-events:none;
 
 }
 .serif{
@@ -218,4 +217,37 @@ a:hover{
   color: #ff8b3d;
   cursor: url("clickSmaller.png"), auto
 }
+
+.canCutOut{
+  width: 12vw;
+  position:absolute;
+  left: 10vw;
+  top: 22vw;
+  z-index: 2000;
+  transition: transform 0.2s ease-in-out;
+  pointer-events:fill;
+}
+.canCutOut:hover{
+  animation: tilt 0.1s ease-in-out infinite alternate;
+
+}
+
+@keyframes tilt {
+  0% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}
+
+.fizz{
+  width: 7vw;
+  position:absolute;
+  left: 11vw;
+  z-index: 0;
+  top: 20vw;
+}
+
+
 

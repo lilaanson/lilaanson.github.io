@@ -1,4 +1,10 @@
 
+const fizz = document.getElementById("fizz");
+const can = document.getElementById("canCutOut");
+
+fizz.style.visibility = "hidden"
+
+
 $(".move-area").mousemove(function(event) {
   var eye = $(".eye");
   var x = (eye.offset().left) + (eye.width() / 2);
@@ -12,3 +18,12 @@ $(".move-area").mousemove(function(event) {
     'transform': 'rotate(' + rot + 'deg)'
   });
 });
+
+  can.addEventListener("mouseenter", () => {
+    fizz.style.visibility = "visible"
+  });
+
+  can.addEventListener("mouseleave", () => {
+    fizz.style.visibility = "hidden"
+  });
+
