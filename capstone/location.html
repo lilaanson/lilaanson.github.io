@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOCATION</title>
+</head>
+<body>
+    <h1>HTML Geolocation</h1>
+    <p>Click the button to get your coordinates.</p>
+
+    <button onclick="getLocation()">Try It</button>
+
+    <p id="demo"></p>
+    <br>
+    <br>
+    <p id="address">Loading address...</p>
+<script>
+    const x = document.getElementById("demo");
+    
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+    
+    function showPosition(position) {
+      x.innerHTML = "Latitude: " + position.coords.latitude +
+      "<br>Longitude: " + position.coords.longitude;
+      const lat = position.coords.latitude;
+      const lng = position.coords.longitude;
+      getAddress(lat, lng)
+    }
+
+    getLocation()
+
+    // Replace these coordinates with the ones you want to look up
+
+    const apiKey = '6dda0d96200a47e3a8bac679ee5392b4'; // Replace with your actual OpenCage API key
+
+    function getAddress(lat, lng) {
+        const url = `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lng}&key=${apiKey}`;
+        
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                if (data.results && data.results.length > 0) {
+                    const address = data.results[0].formatted;
+                    document.getElementById("address").textContent = address;
+                } else {
+                    console.error("Geocoding error: No results found");
+                    document.getElementById("address").textContent = "Address not found";
+                }
+            })
+            .catch(error => console.error("Error fetching address:", error));
+    }
+
+    // Get address from coordinates
+    </script>
+</body>
+</html>

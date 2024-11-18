@@ -1,0 +1,99 @@
+/* styles.css */
+
+body {
+    margin: 5%;
+    padding: 0;
+    background-color: black;
+    color: #ffffff50; /* Faded white */
+    overflow-x: hidden;
+    font-family: "tt-commons-pro", sans-serif;
+    position: relative;
+    cursor: crosshair;
+}
+
+.container {
+    max-width: 50%;
+    margin: 17% auto auto 0;
+    padding: 50px 0;
+
+}
+
+.title{
+    margin: 0 auto auto 0;
+    padding: 5% 0 0 0;
+    color: white;
+    position: fixed;
+    /*background-image: linear-gradient(black, black, black, rgba(0,0,0,0));*/
+    height: 27rem;
+    width: 100%;
+    position: fixed;
+    top:0;
+    z-index: 1;
+}
+.name{
+    padding: 0;
+}
+.line{
+    margin: 5vh 0; /* Reduced vertical spacing for closer stacking of lines */
+    opacity: 0.5; /* Faded appearance */
+    transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.line.active {
+    color: white;
+    opacity: 1;
+}
+.bigText{
+    font-size: 8rem;
+    line-height: 8rem; /* Line height slightly larger than font size for tight spacing */
+    font-weight: 700;
+    font-style: normal;
+}
+.description{
+    position:fixed;
+    bottom: 10%;
+}
+
+.text{
+    text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
+             1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+    font-size: 3rem; /* Larger text size */
+    line-height: 3.2rem; /* Line height slightly larger than font size for tight spacing */
+    font-family: "source-serif-pro", serif;
+    color: white;
+
+}
+.biggerText{
+    
+    font-size: 10rem;
+    line-height: 8rem; /* Line height slightly larger than font size for tight spacing */
+    color: white;
+    font-weight: 700;
+    font-style: normal;
+    
+}
+
+.colored{
+    color: #d35c47
+}
+
+#grid-container {
+    position: fixed; /* Ensure the grid stays fixed in place */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure the grid stays behind all content */
+  }
+  .grid-line {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.1); /* Faint white */
+  }
+  .horizontal {
+    height: 1px;
+    width: 100%;
+  }
+  .vertical {
+    width: 1px;
+    height: 100%;
+  }
