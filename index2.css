@@ -4,7 +4,7 @@ body {
     margin: 5%;
     padding: 0;
     background-color: black;
-    color: #ffffff50; /* Faded white */
+    color: #ffffff50; 
     overflow-x: hidden;
     font-family: "tt-commons-pro", sans-serif;
     position: relative;
@@ -12,8 +12,8 @@ body {
 }
 
 .container {
-    max-width: 50%;
-    margin: 17% auto auto 0;
+    max-width: 100%;
+    margin: 15% auto auto 0;
     padding: 50px 0;
 
 }
@@ -28,14 +28,15 @@ body {
     width: 100%;
     position: fixed;
     top:0;
-    z-index: 1;
+    pointer-events: none;
+    z-index:1;
 }
 .name{
     padding: 0;
 }
 .line{
-    margin: 5vh 0; /* Reduced vertical spacing for closer stacking of lines */
-    opacity: 0.5; /* Faded appearance */
+    margin: 5vh 0; 
+    opacity: 0.3; 
     transition: opacity 0.3s ease, color 0.3s ease;
 }
 
@@ -45,28 +46,29 @@ body {
 }
 .bigText{
     font-size: 8rem;
-    line-height: 8rem; /* Line height slightly larger than font size for tight spacing */
+    line-height: 8rem; 
     font-weight: 700;
     font-style: normal;
 }
 .description{
     position:fixed;
-    bottom: 10%;
+    bottom: 33%;
+    font-family: "caliban-std", sans-serif;
+    font-weight: 100;
 }
 
 .text{
     text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
              1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
-    font-size: 3rem; /* Larger text size */
-    line-height: 3.2rem; /* Line height slightly larger than font size for tight spacing */
-    font-family: "source-serif-pro", serif;
+    font-size: 2rem;
+    line-height: 2.5rem; 
     color: white;
 
 }
 .biggerText{
     
     font-size: 10rem;
-    line-height: 8rem; /* Line height slightly larger than font size for tight spacing */
+    line-height: 8rem; 
     color: white;
     font-weight: 700;
     font-style: normal;
@@ -74,20 +76,21 @@ body {
 }
 
 .colored{
-    color: #d35c47
+    color: #d35c47;
+    /*text-shadow: 5px 5px #FFFFFF;*/
 }
 
 #grid-container {
-    position: fixed; /* Ensure the grid stays fixed in place */
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Ensure the grid stays behind all content */
+    z-index: -1; 
   }
   .grid-line {
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.1); /* Faint white */
+    background-color: rgba(255, 255, 255, 0.1); 
   }
   .horizontal {
     height: 1px;
@@ -97,3 +100,152 @@ body {
     width: 1px;
     height: 100%;
   }
+
+  .bluebird{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    bottom: 40%;
+    right: 3%;
+    position: fixed;
+    width: auto;
+    align-items:start;
+    height:10vh;
+    text-align: center;
+
+  }
+  .bluebirdHomeImg{
+    padding: 0 0 0 15px;
+    width:7vw;
+  }
+  .bluebirdHomeImg:hover{
+    width: 7.1vw;
+  }
+  .circle1{
+    position:fixed;
+    size: 10vw;
+    left: 85%;
+    top: 47%;
+  }
+  .caption{
+    color: #ffffff80; 
+    font-size: 1.5rem;
+    font-family: "caliban-std", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  a{
+    text-decoration: none;
+    color:white;
+    transition: color .2s;
+  }
+  a:hover{
+    color: #d35c47;
+    transition: color .2s;
+  }
+
+  .movingImg1{
+    width:6vw;
+  }
+  .movingImg1:hover{
+    width:6.1vw;
+  }
+  .movingPoster1{
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    bottom: 70%;
+    right: 22%;
+    position: fixed;
+    width: auto;
+    height:1vh;
+  }
+  .whiteBackground1{
+    position: fixed;
+    bottom: 20%;
+    background-color: white;
+    width:8vw;
+    height: 11vw;
+}
+  .whaaat{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    bottom: 40%;
+    right: 40%;
+    position: fixed;
+    width: auto;
+    height:1vh;
+    text-align: center;
+  }
+  .whaaatHomeImg{
+    width: 8vw;
+  }
+  .whaaatHomeImg:hover{
+    width: 8.1vw;
+  }
+  .movingImg2{
+    width:6vw;
+  }
+  .movingImg2:hover{
+    width:6.1vw;
+  }
+  .movingPoster2{
+    text-align: right;
+    display: flex;
+    flex-direction: row-reverse;
+    gap:10px;
+    top: 4%;
+    right: 5%;
+    position: fixed;
+    width: auto;
+    height:1vh;
+  }
+
+  .tedHomeImg{
+    width:30vw;
+  }
+  .tedHomeImg:hover{
+    width:30.1vw;
+  }
+  .tedWebsite{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    top: 22%;
+    right: 15%;
+    position: fixed;
+    width: auto;
+    height:1vh;
+  }
+  
+  .csacHomeImg{
+    width:30vw;
+  }
+  .csacHomeImg:hover{
+    width:30.1vw;
+  }
+  .csac{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    bottom: 40%;
+    right: 5%;
+    position: fixed;
+    width: auto;
+    height:1vh;
+  }
+.contact{
+    position: fixed;
+    text-align: left;
+    right: 20%;
+    top: 30%;
+    font-size: 2rem;
+    font-family: "caliban-std", sans-serif;
+    font-weight: 400;
+    color: #FFFFFF90;
+    font-style: normal;
+}
+.bio{
+    font-size: 7rem;
+}

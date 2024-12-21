@@ -1,5 +1,19 @@
 
+//change bottom text for each
+//remove A from top:
+//lila anson is
+// a human
+// bottom text thicker or 
+//slat board signage
 
+const gD = document.querySelector('.projectsGraphicDesign');
+const wD = document.querySelector('.projectsWebDev');
+const contact = document.querySelector('.contact')
+const container = document.querySelector('.container')
+
+gD.style.display = "none";
+wD.style.display = "none";
+contact.style.display = "none";
 
 window.addEventListener('scroll', () => {
     console.log("SCROLLING")
@@ -7,18 +21,51 @@ window.addEventListener('scroll', () => {
     const viewportHeight = window.innerHeight;
 
     lines.forEach(line => {
+        console.log(line.classList)
         const rect = line.getBoundingClientRect();
         const lineCenter = rect.top + rect.height / 2;
 
         // Expanded range around the viewport's vertical center
-        const upperThreshold = viewportHeight / 2 - 150; // Increase this for a larger sensing area above center
-        const lowerThreshold = viewportHeight / 2 + 150; // Increase this for a larger sensing area below center
+        const upperThreshold = viewportHeight / 3 - 20; // Increase this for a larger sensing area above center
+        const lowerThreshold = viewportHeight / 3 + 120; // Increase this for a larger sensing area below center
 
         if (lineCenter >= upperThreshold && lineCenter <= lowerThreshold) {
             line.classList.add('active');
+            if (line.classList.contains("graphicDesigner")){
+                gD.style.display = "block";
+                console.log("true now")
+            }
+            else if (line.classList.contains("webDeveloper")){
+                wD.style.display = "block";
+                console.log("true now")
+            }
+            else if (line.classList.contains("human")){
+                contact.style.display = "block";
+            }
+
         } else {
             line.classList.remove('active');
+            if (line.classList.contains("graphicDesigner")){
+                gD.style.display = "none";
+                console.log("false now")
+            }
+            else if (line.classList.contains("webDeveloper")){
+                wD.style.display = "none";
+                console.log("true now")
+            }
+            else if (line.classList.contains("human")){
+                contact.style.display = "none";
+            }
+
         }
+    if (line.classList.contains("bio")){
+        if (lineCenter >= (upperThreshold - 300) && lineCenter <= (lowerThreshold + 300)) {
+            line.classList.add('active')
+        }
+        else {
+            line.classList.remove('active')
+        }
+    }
     });
 });
 
@@ -48,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function createGrid() {
-    const spacing = 96; // Approximately 1 inch at 96dpi
+    const spacing = 140; 
     const gridContainer = document.getElementById('grid-container');
     const width = window.innerWidth;
     const height = window.innerHeight;
