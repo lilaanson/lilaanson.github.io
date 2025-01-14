@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/msp0kkf.css">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <title>my portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "tt-commons-pro", sans-serif;
+            display: flex;
+            color: black;
+            background-color: transparent;
+        }
+
+        .sidebar {
+            z-index: 10;
+            width: 370px;
+            position: fixed;
+            height: 100vh;
+            overflow: hidden;
+            padding-top: 20px;
+        }
+
+        .sidebar p {
+            margin: 0;
+            font-weight:bold;
+            font-size: 25px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .sidebar .dropdown {
+            cursor: pointer;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            max-height: none; /* No height limit, always expanded */
+            overflow: visible; /* Ensure all content is shown */
+            transition: none; /* Remove animation */
+        }
+        .sidebar .dropdown .dis{
+            cursor: not-allowed;
+        }
+
+        .sidebar .dropdown li {
+            padding: 8px 16px;
+        }
+
+        .content {
+            z-index: 50;
+            margin-left: 40vw;
+            padding: 20px;
+        }
+
+        .expanded {
+            max-height: 150px; /* Adjust height to fit dropdown items */
+        }
+        .sidebar .myName{
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <p class="myName">LILA<Br>ANSON</p>
+        <p>GRAPHIC DESIGN</p>
+        <ul id="graphic-design" class="dropdown">
+            <li data-images="cover1.png,cover2.png">ZINE COVERS</li>
+            <li data-images="bluebirdCans.png,bluebirdBox.png">BLUEBIRD SPARKLING WATER</li>
+            <li data-images="assets/moving1.gif,assets/moving2.gif">ANIMATED POSTERS</li>
+            <li data-images="assets/badgeFront.png,assets/badgeBack.png">WHAAAT!? FESTIVAL</li>
+        </ul>
+        <br>
+
+        <p>WEB DESIGN & DEVELOPMENT</p>
+        <ul id="web-dev" class="dropdown">
+            <li data-images="tedGif.gif">TEDxCU.COM</li>
+            <li data-images="assets/csac.gif">CSAC</li>
+            <li data-images="assets/circle.png" class="dis">DENVER ZOO REDESIGN</li>
+        </ul>
+        <br>
+
+        <p>GAME DEVELOPMENT</p>
+        <ul id="game-dev" class="dropdown">
+            <li data-images="assets/circle.png" class="dis">NIGHT SHIFT</li>
+        </ul>
+        <br>
+
+        <p>CURATION</p>
+        <ul id="curation" class="dropdown">
+            <li data-images="assets/circle.png" class="dis">THIRTEEN YEARS OF TEDxCU</li>
+            <li data-images="assets/circle.png" class="dis">MINI PROJECTS</li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div id="image-gallery" style="display: flex; gap: 10px; flex-wrap: wrap;"></div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.sidebar .dropdown li').forEach(item => {
+            item.addEventListener('click', (event) => {
+                const images = event.target.getAttribute('data-images').split(','); // Get image URLs
+                const gallery = document.getElementById('image-gallery'); // Select the gallery container
+
+                // Clear existing images in the gallery
+                gallery.innerHTML = '';
+
+                // Loop through image URLs and create <img> elements
+                images.forEach(imageUrl => {
+                    const img = document.createElement('img');
+                    img.src = imageUrl.trim(); // Trim in case of extra spaces
+                    img.alt = "Gallery Image"; // Optional alt text
+                    if (images.length > 1) {
+                        img.style.maxWidth = '30vw'; // Smaller width for multiple images
+                    } else {
+                        console.log("here")
+                        img.style.minWidth = '50vw'; // Larger width for single images
+                    } 
+                    img.style.height = 'auto'; 
+                    gallery.appendChild(img); // Add the image to the gallery
+                });
+            });
+        });
+    </script>
+</body>
+</html>

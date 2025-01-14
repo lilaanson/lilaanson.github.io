@@ -27,7 +27,7 @@ window.addEventListener('scroll', () => {
 
         // Expanded range around the viewport's vertical center
         const upperThreshold = viewportHeight / 3 - 20; // Increase this for a larger sensing area above center
-        const lowerThreshold = viewportHeight / 3 + 120; // Increase this for a larger sensing area below center
+        const lowerThreshold = viewportHeight / 3 + 300; // Increase this for a larger sensing area below center
 
         if (lineCenter >= upperThreshold && lineCenter <= lowerThreshold) {
             line.classList.add('active');
