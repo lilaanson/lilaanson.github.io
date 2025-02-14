@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LILA ANSON</title>
+    <link href="index.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/msp0kkf.css">
+</head>
+<body>
+    <div class="title-bar">
+        <div class="nav">
+            <a class="nav-item" href="#"><span class="underline">h</span>ome</a>
+            <a class="inactive nav-item" href="#"><span class="underline">gr</span>aphic design</a>
+            <a class="inactive nav-item" href="#"><span class="underline">w</span>eb development</a>
+            <a class="inactive nav-item" href="#"><span class="underline">c</span>uration</a>
+            <a class="inactive nav-item" href="#"><span class="underline">t</span>alk</a>
+        </div>
+        <div class="exit-buttons">
+            <img class="upper-right" src="website-assets/dash.png">
+            <img class="upper-right" src="website-assets/square.png">
+            <img class="upper-right" src="website-assets/x.png">
+        </div>
+    </div>
+    <div class="content">
+        <div class="top-row">
+            <div class="notepad-group">
+                <div class="notepad">
+                    <img class="notepad-img" src="website-assets/notepad.png">
+                </div>
+                <div class="editable-box" contenteditable="true" oninput="limitCharacters(this)">
+                    I am a designer interested in creating spaces to encourage radical collaboration and discovery.
+                </div>
+            </div>
+            <div class="can-div">
+                <img src="website-assets/canCutOutCropper.png" class="can-img">
+            </div>
+            <div class="exp-type-div">
+                <img src="website-assets/cover1.png" class="exp-type-img">
+            </div>
+        </div>
+        <div class="bottom-row">
+            <div class="comp-type-div">
+                <img class="comp-type-img" src="website-assets/compType.gif">
+            </div>
+            <div class="x-div">
+                <img class="ex-img" src="website-assets/EX.png">
+            </div>
+            <div class="badge-div">
+                <img class="badge-img" src="website-assets/badgeFront.png">
+            </div>
+        </div>
+        <div class="name-div">
+            <p class="name"><span class="underline">L</span>ILA ANSON<span class="blinking-cursor"></span></p>
+        </div>
+    </div>
+    <script>
+        function limitCharacters(element) {
+            let text = element.innerText;
+            if (text.length > 110) { // Limit to 500 characters
+                element.innerText = text.substring(0, 110);
+                placeCaretAtEnd(element);
+            }
+        }
+
+        function placeCaretAtEnd(el) {
+            let range = document.createRange();
+            let sel = window.getSelection();
+            range.selectNodeContents(el);
+            range.collapse(false);
+            sel.removeAllRanges();
+            sel.addRange(range);
+        }
+    </script>
+</body>
+</html>
