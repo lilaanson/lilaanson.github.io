@@ -3,36 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lila Anson</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://use.typekit.net/msp0kkf.css">
+    <title>LILA ANSON</title>
+    <link href="index.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/msp0kkf.css">
     <script src="index.js" defer></script>
 </head>
-<body id="main">
-  <div class="menu">
-    <p class="franklin"><a href="work.html">WORK</a></p>
-    <p class="franklin"><a href="contact.html">CONTACT</a></p>
-  </div>
-  <div class="canAnim">
-    <a href="work.html#graphicDesign"><img id="canCutOut" class="canCutOut" src="canCutOut.png"></a>
-    <img id="fizz" class="fizz" src="fizz.png">
-  </div>
-  <section class="move-area">
-    <div class='.container'>
-      <img src="eyeBackground.png" class="shape">
-      <div class='eye'><img src="eyeForeground.png" class="eyeInner"><img src="eyeShine.png" class="eyeShine"></div>
-      <img src="eyeBackground.png" class="shape">
-      <div class='eye'><img src="eyeForeground.png" class="eyeInner"><img src="eyeShine.png" class="eyeShine"></div>
+<body>
+    <div id="hidden-sad-div" class="hidden-sad-div">
+        <img class="hidden-sad-img" id="hidden-sad-img" src="website-assets/sad.png">
     </div>
-  </section>
-  <div class="bio">
-    <p class="serif">I am a</p>
-    <p class="franklin"><a href="work.html#graphicDesign">GRAPHIC DESIGNER</a><BR><a href="work.html#gameDesign">GAME MAKER</a><BR><a href="webDev">WEB DEVELOPER</a></p>
-    <p class="serif">interested in creating spaces<br>to encourage radical collaboration<br>and discover how the<br>ancient world and the modern<br>one can work together.
-    </p>
-  </div>
-  <div class="name"><img src="Untitled-2.png" class="nameImg"></div>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <div class="title-bar title-bar-index">
+        <div class="nav">
+            <a class="nav-item" href="index.html"><span class="underline">h</span>ome</a>
+            <a class="inactive nav-item" href="curation.html"><span class="underline">c</span>uration</a>
+            <a class="inactive nav-item" href="graphic-design.html"><span class="underline">gr</span>aphic design</a>
+            <a class="inactive nav-item" href="#"><span class="underline">w</span>eb development</a>
+            <a class="inactive nav-item" href="talk.html"><span class="underline">t</span>alk</a>
+        </div>
+        <div class="exit-buttons">
+            <img class="upper-right dash" src="website-assets/dash2.png">
+            <img class="upper-right" src="website-assets/square.png">
+            <img id="x" class="upper-right x" src="website-assets/x.png">
+        </div>
+    </div>
+    <div id="grid-container"></div>
+    <div class="content content-index">
+        <div class="top-row">
+            <div class="notepad-group">
+                <div class="notepad">
+                    <img class="notepad-img" src="website-assets/notepad.png">
+                </div>
+                <div class="editable-box" contenteditable="true" oninput="limitCharacters(this)">
+                    I am a designer interested in creating spaces to encourage radical collaboration and discovery.
+                </div>
+            </div>
+            <div class="can-div">
+                <img src="website-assets/canCutOutCropper.png" class="can-img">
+            </div>
+            <div class="exp-type-div">
+                <img src="website-assets/cover1.png" class="exp-type-img">
+            </div>
+        </div>
+        <div class="bottom-row">
+            <div class="comp-type-div">
+                <img class="comp-type-img" src="website-assets/compType.gif">
+            </div>
+            <div class="x-div">
+                <img class="ex-img" src="website-assets/EX.png">
+            </div>
+            <div class="badge-div">
+                <img class="badge-img" src="website-assets/badgeFront.png">
+            </div>
+        </div>
+        <div class="name-div">
+            <p class="name"><span class="underline">L</span>ILA ANSON<span class="blinking-cursor"></span></p>
+        </div>
+    </div>
+    <script>
+        function limitCharacters(element) {
+            let text = element.innerText;
+            if (text.length > 110) { // Limit to 500 characters
+                element.innerText = text.substring(0, 110);
+                placeCaretAtEnd(element);
+            }
+        }
+
+        function placeCaretAtEnd(el) {
+            let range = document.createRange();
+            let sel = window.getSelection();
+            range.selectNodeContents(el);
+            range.collapse(false);
+            sel.removeAllRanges();
+            sel.addRange(range);
+        }
+    </script>
 </body>
 </html>

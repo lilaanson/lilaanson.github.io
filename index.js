@@ -1,29 +1,47 @@
+function createGrid() {
+    const spacing = 140; 
+    const gridContainer = document.getElementById('grid-container');
+    const width = window.innerWidth;
+    const height = window.innerHeight;
 
-const fizz = document.getElementById("fizz");
-const can = document.getElementById("canCutOut");
+    // Clear existing grid lines
+    gridContainer.innerHTML = '';
 
-fizz.style.visibility = "hidden"
+    // Create horizontal lines
+    for (let y = 0; y <= height; y += spacing) {
+      const line = document.createElement('div');
+      line.className = 'grid-line horizontal';
+      line.style.top = `${y}px`;
+      gridContainer.appendChild(line);
+    }
 
+    // Create vertical lines
+    for (let x = 0; x <= width; x += spacing) {
+      const line = document.createElement('div');
+      line.className = 'grid-line vertical';
+      line.style.left = `${x}px`;
+      gridContainer.appendChild(line);
+    }
+  }
 
-$(".move-area").mousemove(function(event) {
-  var eye = $(".eye");
-  var x = (eye.offset().left) + (eye.width() / 2);
-  var y = (eye.offset().top) + (eye.height() / 2);
-  var rad = Math.atan2(event.pageX - x, event.pageY - y);
-  var rot = (rad * (180 / Math.PI) * -1) + 200;
-  eye.css({
-    '-webkit-transform': 'rotate(' + rot + 'deg)',
-    '-moz-transform': 'rotate(' + rot + 'deg)',
-    '-ms-transform': 'rotate(' + rot + 'deg)',
-    'transform': 'rotate(' + rot + 'deg)'
-  });
+  // Handle resizing
+  window.addEventListener('resize', createGrid);
+
+  // Initial grid setup
+  createGrid();
+document.getElementById('x').addEventListener('click', function() {
+    console.log("shown");
+    const hiddenImg = document.getElementById('hidden-sad-img');
+    
+    hiddenImg.style.opacity = 1;
+
+    let opacity = 1; 
+    let fadeInterval = setInterval(() => {
+        opacity -= 0.1; 
+        hiddenImg.style.opacity = opacity;
+        
+        if (opacity <= 0) {
+            clearInterval(fadeInterval); 
+        }
+    }, 100); 
 });
-
-  can.addEventListener("mouseenter", () => {
-    fizz.style.visibility = "visible"
-  });
-
-  can.addEventListener("mouseleave", () => {
-    fizz.style.visibility = "hidden"
-  });
-

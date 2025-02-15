@@ -1,0 +1,253 @@
+#main{
+  background:white;
+  height: 100%;
+  width:100%;
+  margin: auto;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  cursor: url("mouseSmallerer.png"), auto
+}
+body{
+  background:white;
+  height: 100%;
+  width:100%;
+  margin: auto;
+  cursor: url("mouseSmallerer.png"), auto
+}
+html{
+  padding: 10px;
+  font-family: "franklin-gothic-atf", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 20px;
+}
+.menu{
+  display: flex;
+  justify-content: space-between;
+}
+.move-area{/*normally use body*/
+  padding: 10% 0 0 60%;
+  width: 100%;
+  height: 95%;
+  position: absolute;
+}
+.container {
+  width: 100%;
+}
+.shape{
+  width:60px;
+  margin: 16px 0px 0px 5px;
+  position: absolute;
+}
+.eyeInner{
+  width: 20px;
+  position: absolute;
+}
+.eye {
+  margin:20px;
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  background: #5271ff;
+}
+.eyeShine{
+  width:7px;
+  position:absolute;
+  padding:5px 5px 0 0;
+}
+/*.eye:after { /*pupil
+  position: absolute;
+  bottom: 17px;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  background: #000;
+  border-radius: 50%;
+  content: " ";
+  background: green;
+  transform-origin: 0% 0%;
+} */
+
+.name{
+  pointer-events: none;
+  width:100%;
+  position:absolute;
+  height: 97%;
+}
+.nameImg{
+  width: 98%;
+  position: absolute;
+  bottom:2%;
+}
+.bio{
+  position: absolute;
+  text-align: center;
+  left: 33%;
+  height:auto;
+  bottom:22vw;
+
+}
+.serif{
+  font-family: "source-serif-pro", serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 15px;
+}
+.franklin{
+  color:#5271ff;
+
+}
+
+p{
+  margin-bottom: 0px;
+  margin-top: 0px;
+
+}
+.selectedWorkImg{
+  width: 60vw;
+  display: block;
+  margin:auto;
+}
+.contentFlex{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin:auto;
+  justify-content:space-around;
+}
+.work{
+  display: flex;
+  flex-direction:column;
+}
+.workItem{
+  gap: 50px;
+  display:flex;
+  flex-direction: row;
+}
+.bluebirdTitle{
+  display:block;
+  margin: auto 0 auto auto;
+  position: relative;
+  width: 20vw;
+}
+.left{
+  flex-basis: 100%;
+}
+.right{
+  flex-basis: 100%;
+}
+.bluebirdBox{
+  display:block;
+  width:100%;
+  margin: auto 0 auto auto;
+}
+.bluebirdCans{
+  display: block;
+  width:100%;
+  margin: 0 auto auto 0;
+}
+.rightAlign{
+  text-align: right;
+}
+hr{
+  width: 75%;
+}
+.tedTitle{
+  display:block;
+  margin: auto auto auto 0;
+  position: relative;
+  width: 20vw;
+}
+.tedPoster{
+  width: 100%;
+  display:block;
+  margin: auto 0 auto auto;
+}
+.tedPoster2{
+  width: 100%;
+  display:block;
+  margin: auto auto auto 0;
+}
+.tedVideo{
+  display:block;
+  margin: auto 0 auto auto;
+  width: 100%;
+}
+.movingTitle{
+  display:block;
+  margin: auto 0 auto auto;
+  position: relative;
+  width: 20vw;
+}
+.movingVideo{
+  width:80%;
+  display:block;
+  margin: auto 0 auto auto;
+}
+.movingVideo2{
+  width:80%;
+  display:block;
+  margin: auto auto auto 0;
+}
+.starboardTitle{
+  display:block;
+  margin: auto auto auto 0;
+  position: relative;
+  width: 20vw;
+}
+.starboardImg{
+  width: 100%;
+  display:block;
+  margin: auto auto auto 0;
+}
+.starboardImg2{
+  width: 100%;
+  display:block;
+  margin: auto auto auto 0;
+}
+a{
+  text-decoration:none;
+  color: #5271ff;
+  cursor: url("clickSmaller.png"), auto
+}
+a:hover{
+  text-decoration:none;
+  color: #ff8b3d;
+  cursor: url("clickSmaller.png"), auto
+}
+
+.canCutOut{
+  width: 12vw;
+  position:absolute;
+  left: 10vw;
+  top: 22vw;
+  z-index: 2000;
+  transition: transform 0.2s ease-in-out;
+  pointer-events:fill;
+}
+.canCutOut:hover{
+  animation: tilt 0.1s ease-in-out infinite alternate;
+
+}
+
+@keyframes tilt {
+  0% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}
+
+.fizz{
+  width: 7vw;
+  position:absolute;
+  left: 11vw;
+  z-index: 0;
+  top: 20vw;
+}
+
+
+
