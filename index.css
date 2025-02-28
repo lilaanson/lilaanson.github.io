@@ -250,6 +250,7 @@ a{
     position: fixed;
     color:#f8faf0;
     font-size: 10vw;
+    -webkit-writing-mode: sideways-lr;
     writing-mode: sideways-lr;
     font-family: "tt-commons-pro", sans-serif;
     font-weight: 500;
@@ -434,4 +435,12 @@ a{
 }
 .moving-div{
     width:33%;
+}
+.fl-img{
+    width:24%;
+    margin-right: 10px;
+    margin-top:30px;
+}
+.project-info .bottom{
+    margin-top:10px;
 }
