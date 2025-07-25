@@ -10,7 +10,7 @@
     <script src="index.js" defer></script>
 </head>
 <body>
-    <div id="hidden-sad-div" class="hidden-sad-div">
+    <!-- <div id="hidden-sad-div" class="hidden-sad-div">
         <img class="hidden-sad-img" id="hidden-sad-img" src="website-assets/sad.png">
     </div>
     <div class="title-bar">
@@ -26,15 +26,17 @@
             <img class="upper-right" src="website-assets/square.png">
             <img id="x" class="upper-right x" src="website-assets/x.png">
         </div>
-    </div>
+    </div> -->
     <div id="grid-container"></div>
-    <div class="content graphic-design-content">
-        <div class="tilted-text">GRAPHIC DESIGN</div>
+    <div class="content curation-content">
+        <div class="tilted-text">GRAPHICS</div>
+        <div class="only-show-title-when-small">GRAPHICS</div>
+
         <div class="main">
             <div class="i-make-margins">
                 <div class="project-title">
                     <img src="website-assets/stars2.png" class="stars-img">
-                    <div class="actual-title">zine covers</div>
+                    <div id="magazines" class="actual-title">Zine Covers</div>
                 </div>
                 <div class="project-info space-evenly">
                     <div class="zine-div">
@@ -54,7 +56,7 @@
             <div class="i-make-margins">
                 <div class="project-title">
                     <img src="website-assets/stars2.png" class="stars-img">
-                    <div class="actual-title">BLUEBIRD sparkling water</div>
+                    <div class="actual-title">BLUEBIRD Sparkling Water</div>
                 </div>
                 <div class="project-info">
                     <div class="project-can-div"><img class="project-can-img" src="website-assets/canCutOutCropper.png"></div>
@@ -92,7 +94,7 @@
             <div class="i-make-margins">
                 <div class="project-title">
                     <img src="website-assets/stars2.png" class="stars-img">
-                    <div class="actual-title">animated poster series</div>
+                    <div class="actual-title">Animated Poster Series</div>
                 </div>
                 <div class="project-info space-evenly">
                     <div class="moving-div">
@@ -101,7 +103,13 @@
                     <div class="moving-div">
                         <img src="website-assets/moving2.gif" class="ted-poster-img">
                     </div>
-                    <div class="project-info moving-info">
+                        <div class="project-info moving-info hide-at-smallest">
+                            <div class="ted-poster-info">The GIF on the left is an advertisement for a new course at the University of Colorado highlighting the integration of programming and typography. On the right, I created an animated type poster featuring a typeface of my choice. Both were made using Adobe After Effects.</div>
+                        </div>
+
+                </div>
+                <div class="show-at-smallest">
+                    <div class="project-info">
                         <div class="ted-poster-info">The GIF on the left is an advertisement for a new course at the University of Colorado highlighting the integration of programming and typography. On the right, I created an animated type poster featuring a typeface of my choice. Both were made using Adobe After Effects.</div>
                     </div>
                 </div>
@@ -109,7 +117,36 @@
             <div class="divider-div">
                 <img class="divider-img" src="website-assets/divider2.png">
             </div>
+            <div class="i-make-margins">
+                <div class="project-title">
+                    <img src="website-assets/stars2.png" class="stars-img">
+                    <div id="festivals" class="actual-title">WHAAAT!? Festival Badges</div>
+                </div>
+                <div class="project-info space-evenly">
+                        <div class="project-info moving-info hide-at-smallest">
+                            <div class="ted-poster-info">The WHAAAT!? Festival highlights experimental games and playful interactions. Based on the 2025 theme (old TV Sitcom) and design resouces given, I designed badges for attendees. The back was stylized and left blank to later be populated with the schedule.</div>
+                        </div>
+                    <div class="moving-div">
+                        <img src="website-assets/badgeFront.png" class="ted-poster-img">
+                    </div>
+                    <div class="moving-div">
+                        <img src="website-assets/badgeBack.png" class="ted-poster-img">
+                    </div>
+                    
+                </div>
+            <div class="show-at-smallest">
+                <div class="project-info">
+                    <div class="ted-poster-info">The WHAAAT!? Festival highlights experimental games and playful interactions. Based on the 2025 theme (old TV Sitcom) and design resouces given, I designed badges for attendees. The back was stylized and left blank to later be populated with the schedule.</div>
+                </div>
+            </div>
+            </div>
+            <div class="divider-div">
+                <img class="divider-img" src="website-assets/divider2.png">
+            </div>
         </div>
     </div>
+    <div class="contact-info">
+            <p class="contact-email">lilaeanson@gmail.com</p>
+        </div>
 </body>
 </html>

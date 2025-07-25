@@ -5,13 +5,12 @@ html{
 body{
     margin:0;
     background-color: #0000FF;
-    font-family: "noto-mono", mono;
-    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size:2vw;
     cursor: url("website-assets/pointer.png");
 }
 a{
     text-decoration: none;
-    color: #0a131e;
 }
 /*-------GRIDLINES--------*/
 #grid-container {
@@ -60,9 +59,13 @@ a{
     text-decoration: underline;
 }
 .nav{
+    padding-left:1vw;
+    font-family: "tt-commons-pro", sans-serif;
+    font-weight:400;
+    font-size:2vw;
     margin: auto auto auto 20px;
     justify-content: space-between;
-    width: calc(60% + (100vw - 100%));
+    width: auto;
     display: flex;
     flex-direction: row;
     position: relative;
@@ -98,7 +101,7 @@ a{
     flex-direction: row;
     position: relative;
     height: 94vh;
-    padding: 60px 0 0 0;
+    padding: 30px 0 0 0;
 }
 
 .top-row{
@@ -106,13 +109,36 @@ a{
     flex-direction: column;
     position: relative;
     color:#f8faf0;
-    margin: 30px auto auto auto;
+    margin: 0 auto 0 auto;
     width: 95%;
-    height: 20%;
-    font-family: "tt-commons-pro", sans-serif;
-    font-weight: 400;
+    /* font-family: "tt-commons-pro", sans-serif; */
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 100;
     font-style: normal;
-    font-size:6vw;
+    font-size:3.5vw;
+}
+.intro-text{
+    margin-top:0px;
+}
+.contact-info{
+    text-align: right;
+    margin: 0 auto auto auto;
+    color:#f8faf0;
+    width: 95%;
+    /* font-family: "tt-commons-pro", sans-serif; */
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size:2vw;
+}
+
+a{
+    color:#EC5578;
+}
+a:hover{
+    color:#EC5578;
+    opacity: 80%;
+    cursor: pointer;
 }
 .notepad-group{
     width: 30%;
@@ -216,6 +242,9 @@ a{
 .inactive{
     opacity: 50%;
 }
+.active{
+    color:#EC5578;
+}
 .blinking-cursor {
     display: inline-block;
     width: 2px;
@@ -246,26 +275,56 @@ a{
     width:100%;
     height: fit-content;
 }
+.standing-posters{
+    width:30%;
+    padding: 0 0 10px 0;
+    margin-right: 10px;
+    margin-top:30px;
+
+}
 .tilted-text{
-    margin: 40px auto auto 40px;
+    margin: auto 0 auto 0px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     position: fixed;
     color:#f8faf0;
-    font-size: 10vw;
-    -webkit-writing-mode: sideways-lr;
-    writing-mode: sideways-lr;
+    font-size: 19vh;
+    -webkit-writing-mode: vertical-lr;
+    writing-mode: vertical-lr;
+    -ms-writing-mode: tb-rl;
+    transform-origin: center;
+    transform: rotate(180deg);
     font-family: "tt-commons-pro", sans-serif;
     font-weight: 500;
     font-style: normal;
-    width: 25%;
+    width: 15%;
     height:100%;
     text-align: right;
 }
+.not-tilted-text{
+    margin-left:2vw;
+    position: relative;
+    color:#f8faf0;
+    font-size: 19vh;
+    font-family: "tt-commons-pro", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: left;
+    width: 100%;
+    height:auto;
+}
+.content-index{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+}
 .main{
     margin: auto 0 auto auto;
-    width:75%;
+    width:80%;
     height:100%;
     display: flex;
     flex-direction: column;
@@ -275,7 +334,7 @@ a{
     display:flex;
     flex-direction: column;
     position: relative;
-    width: 80%;
+    width: 90%;
 }
 .logo{
     margin: 50px auto 0 0;
@@ -395,8 +454,6 @@ a{
     display: flex;
     flex-direction: row;
     position: relative;
-    width:100%;
-    height: 100vw; /*change to fit content later */
 }
 
 .graphic-design-content .project-title{
@@ -440,6 +497,11 @@ a{
 .moving-div{
     width:33%;
 }
+.videos{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
 
 /* WEB DEV */
 .web-dev-content{
@@ -450,6 +512,11 @@ a{
     height: fit-content;
 }
 .fl-img{
+    width:24%;
+    margin-right: 10px;
+    margin-top:30px;
+}
+.exhibit{
     width:24%;
     margin-right: 10px;
     margin-top:30px;
@@ -477,12 +544,29 @@ video{
     text-decoration: underline;
     color:#f8faf0;
 }
-.top-row a{
+.only-show-title-when-small{
+    margin-left:4vw;
+    position: relative;
     color:#f8faf0;
+    font-size: 15vw;
+    font-family: "tt-commons-pro", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: left;
+    width: 100%;
+    height:auto;
+    display:none;
 }
+.resize-imgs-when-small{
+    display:none;
+}
+.show-at-smallest{
+    display:none;
+}
+
 /* MEDIA QUERIES */
 
-@media (max-width: 1000px) { 
+@media (max-width: 1150px) { 
     .nav {
         width: 100%;
     }
@@ -490,6 +574,103 @@ video{
         width: 90%;
     }
     .tilted-text{
-        width:5%;
+        width:20%;
+    }
+    body{
+        font-size:2.5vw;
     }
 }
+@media (max-width: 900px) { 
+    .tilted-text{
+        display: none;
+    }
+    .main{
+        margin: auto auto auto auto;
+        width:100%;
+    }
+    .i-make-margins{
+        margin: auto auto  auto auto;
+    }
+    .curation-content, .web-dev-content{
+        flex-direction: column;
+
+    }
+
+    .only-show-title-when-small{
+        display:block;
+    }
+}
+
+
+@media (max-width: 800px) { 
+    body{
+            font-size:3.5vw;
+            overflow-x:hidden;
+        }
+    .not-tilted-text{
+        font-size:140px;
+
+    }
+    .intro-text{
+    font-size:4.5vw;
+
+    }
+    .contact-info{
+        font-size:4vw;
+    }
+    .resize-imgs-when-small{
+        display:block
+    }
+    .normal-imgs-size{
+        display:none;
+    }
+    .fl-img{
+        width:45%;
+    }
+    .standing-posters{
+        width:45%;
+    }
+    .exhibit{
+        width:45%;
+    }
+    .videos{
+            flex-direction: column;
+
+    }
+}
+@media (max-width: 500px) { 
+    body{
+        font-size:5.5vw;
+        overflow-x:hidden;
+    }
+    .not-tilted-text{
+        font-size:25vw;
+
+    }
+    .intro-text{
+    font-size:5.5vw;
+
+    }
+    .contact-info{
+        font-size:4vw;
+    }
+    .flex-at-smallest{
+        display: flex;
+        flex-direction: column;
+    }
+    .hide-at-smallest{
+        display:none;
+    }
+    .shift-at-smallest{
+        text-align: left;
+        margin-left:0;
+    }
+    .show-at-smallest{
+        display:block;
+    }
+    .moving-div{
+           width:45%;
+ 
+    }
+}
+

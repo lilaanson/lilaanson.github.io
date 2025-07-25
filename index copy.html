@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LILA ANSON</title>
+    <link href="index.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/msp0kkf.css">
+    <link rel="icon" type="image/x-icon" href="website-assets/favi7.png">
+    <script src="index.js" defer></script>
+
+</head>
+<body>
+    <div id="hidden-sad-div" class="hidden-sad-div">
+        <img class="hidden-sad-img" id="hidden-sad-img" src="website-assets/sad.png">
+    </div>
+    <div class="title-bar title-bar-index">
+        <div class="nav">
+            <a class="active" href=index.html>home</a>,<a class="" href=curation.html>curation</a>,<a class="" href=graphic-design.html>graphic design</a>,<a class="" href=web-development.html>web development</a>,<a class="" href=talk.html>talk</a>
+            <!-- <a class="nav-item" href="index.html"><span class="underline">h</span>ome</a>
+            <a class="inactive nav-item" href="curation.html"><span class="underline">c</span>uration</a>
+            <a class="inactive nav-item" href="graphic-design.html"><span class="underline">gr</span>aphic design</a>
+            <a class="inactive nav-item" href="web-development.html"><span class="underline">w</span>eb development</a>
+            <a class="inactive nav-item" href="talk.html"><span class="underline">t</span>alk</a> -->
+        </div>
+        <div class="exit-buttons">
+            <img class="upper-right dash" src="website-assets/dash2.png">
+            <img class="upper-right" src="website-assets/square.png">
+            <img id="x" class="upper-right x" src="website-assets/x.png">
+        </div>
+    </div>
+    <div id="grid-container"></div>
+    <div class="content content-index">
+        <!-- <div class="top-row">
+            <div>LILA ANSON is:</div>
+            <a href="graphic-design.html">a graphic designer,</a>
+            <a href="curation.html">a curator,</a>
+            <a href="web-development.html">a web developer,</a>
+            <a href="talk.html"> & human</a>
+        </div> -->
+        <div class="top-row">
+            <p class="intro-text">LILA ANSON is a boulder-based designer pursuing <span class="dif-color-text">curation</span>, <span class="dif-color-text">website development,</span>, and <span class="dif-color-text">graphic design</span>. my goal is to create spaces to 
+            encourage radical collaboration and discovery. my most meaningful works have been through audience experience for <span class="dif-color-text">TEDxCU</span> and creating <span class="dif-color-text">museum exhibitions</span> for children.</p>
+        </div>
+    </div>
+    <script>
+        function limitCharacters(element) {
+            let text = element.innerText;
+            if (text.length > 110) { // Limit to 500 characters
+                element.innerText = text.substring(0, 110);
+                placeCaretAtEnd(element);
+            }
+        }
+
+        function placeCaretAtEnd(el) {
+            let range = document.createRange();
+            let sel = window.getSelection();
+            range.selectNodeContents(el);
+            range.collapse(false);
+            sel.removeAllRanges();
+            sel.addRange(range);
+        }
+    </script>
+</body>
+</html>
