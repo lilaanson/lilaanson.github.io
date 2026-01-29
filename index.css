@@ -466,6 +466,14 @@ a:hover{
     width:45%;
     padding: 0 0 30px 0;
 }
+.cs-div{
+    width:45%;
+    padding: 0 0 30px 0;
+}
+
+.cs-img{
+    width:100%;
+}
 .project-can-div{
     width:30%;
     padding: 0 30px 0 0;
