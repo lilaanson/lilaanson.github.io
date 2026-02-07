@@ -481,6 +481,9 @@ a:hover{
 .project-can-img{
     width:100%;
 }
+.vid{
+    aspect-ratio: 16 / 9;
+}
 .project-box{
     position: relative;
     display: flex;
